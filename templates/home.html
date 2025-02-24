@@ -3,40 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/static/home.css">
-
-    <title>Início</title>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="static/home.css">
+    
+    
 </head>
 <body>
-    <header>
-        <div class="logo">IFbite</div>
-        <nav>
-            <ul>
-                <li><a href="#inicio"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-lightbulb"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logoTeste.avif" alt="">
+        </div>
+
+        <div class="actions">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="login">
+            <button type="button">entrar</button>
+        </div>
+   
     </header>
 
-    <main class="hero">
-        <div class="hero-text">
-            <h1>IFbite</h1>
-            <p></p>
-        </div>
-        <div class="hero-image">
-            <img src="" alt="logo">
-        </div>
-    </main>
+    <div class="imagem">
+    </div>
 
-    <footer>
-        <p><i class="fa-solid fa-envelope"></i> Email: </p> 
-        <p><i class="fa-solid fa-envelope"></i> CNPJ: </p> 
-        <p><i class="fa-solid fa-envelope"></i>  </p> 
-    </footer>
+    <div class="carrosel">
+        <button class="prev" onclick="moveSlide(-1)"> &#10094</button>
+        <div></div>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
