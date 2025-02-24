@@ -2,7 +2,8 @@
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+
+    box-sizing: border-box;
 }
 :root {
     --corprimaria : #F2F2F2;
@@ -18,20 +19,26 @@ body, html {
     grid-column: 1/-1; */
 }
 /* HEADER */
-.header {
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--corprimaria);
+}
+.header-content {
     display: flex;
     justify-content: space-between;
+    width:  100%;
+    max-width:  1200px;
     align-items: center;
-    padding: 0 20px;
-    background-color: var(--corsecundaria);
-    color: var(--corfont);
 }
 .logo img {
     height: 60px;
 }
 .actions {
     display: flex;
-    align-items: end;
+    align-items: center;
 }
 .lupa button,
 .login button {
@@ -39,8 +46,18 @@ body, html {
     border: none;
     color: var(--corprimaria);
     font-size:  30px;
-    margin-left: 10px;
+    margin-left: 15px;
     cursor: pointer;
+}
+.lupa button {
+    font-size: 25px;
+}
+.login button {
+    background-color:#B92616;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
 }
 /* MAIN */
 /* FOOTER */
