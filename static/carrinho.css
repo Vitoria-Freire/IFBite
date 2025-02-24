@@ -1,0 +1,24 @@
+/* ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+:root {
+    --corprimaria : #F2F2F2;
+    --corsecundaria: #B92616;
+    --cordestaque:#367A1C;
+    --corfont: #2D2D31;
+}
+body, html {
+    background-color: var(--corprimaria);
+    color: var(--corfont);
+    font-family: 'Roboto';
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1/-1;
+}
+/* HEADER */
+
+/* MAIN */
+/* FOOTER */

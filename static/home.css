@@ -1,0 +1,46 @@
+/* ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+:root {
+    --corprimaria : #F2F2F2;
+    --corsecundaria: #B92616;
+    --cordestaque:#367A1C;
+    --corfont: #2D2D31;
+}
+body, html {
+    background-color: var(--corprimaria);
+    font-family: 'Roboto';
+    /* display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1/-1; */
+}
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--corsecundaria);
+    color: var(--corfont);
+}
+.logo img {
+    height: 60px;
+}
+.actions {
+    display: flex;
+    align-items: end;
+}
+.lupa button,
+.login button {
+    background-color: transparent;
+    border: none;
+    color: var(--corprimaria);
+    font-size:  30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/* MAIN */
+/* FOOTER */

@@ -1,0 +1,22 @@
+/* ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+:root {
+    --corprimaria : #F2F2F2;
+    --corsecundaria: #B92616;
+    --cordestaque:#367A1C;
+}
+body, html {
+    background-color: var(--corprimaria);
+    font-family: 'Roboto';
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1/-1;
+}
+/* HEADER */
+
+/* MAIN */
+/* FOOTER */
