@@ -53,11 +53,36 @@ header {
     font-size: 25px;
 }
 .login button {
-    background-color:#B92616;
-    color: white;
+    background-color: var(--cordestaque) ;
+    color: white; 
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 16px;
 }
-/* MAIN */
+
+/*SECTION*/
+.logo-section {
+    background-color: var(--corsecundaria);
+    position: relative;
+    padding: 100px 30px 40px 50px;
+    text-align: center;
+    overflow: hidden;
+}
+.logo-container img {
+    max-width: 800px;
+    margin-bottom: 140px;
+}
+.onda img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+}
+
+/* MAIN */1px
+
+
+
 /* FOOTER */
