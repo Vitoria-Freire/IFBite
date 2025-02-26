@@ -23,43 +23,61 @@ body, html {
 /* LOGO */
 img {
     border-radius: 50%;
-    width: 100px;
+    width: 120px;
     margin: 25px;
 }
 /* FORM */
-.jo{
+.forms{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #b9261691;
-    color: var(--corprimaria);
-    grid-column: 7/-1;
+    box-shadow: 2px 2px 15px var(--corfont);
+    grid-column: 8/-1;
     max-height: 60%;
-    width: 60%;
-    border-radius: 5%;
+    width: 70%;
+    border-radius: 10px;
     text-align: center;
     margin-top: 150px;
 }
+.ma{
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+}
+.oi {
+    width: 400px;
+    padding: 15px;
+    margin: 50px;
+    height: auto;
+}
 .form {
-    max-height: 60%;
-    width: 80%;
+    height: 80%;
+    width: 700px;
     border-radius: 5%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 h1 {
-    /* margin-bottom: 50px; */
+    color: #2d2d31ea;
     font-size: 40px;
+    margin: 20px;
+    font-weight: 500;
+}
+p{
+    font-size: 20px;
+    margin: 15px;
+    color: #2d2d31d1;
+    font-weight: 350;
 }
 input {
-    background-color: #2d2d31d4;
-}
-input {
-    width: 280px;
-    height: 40px;
+    width: 90%;
+    height: 42px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #2d2d316a;
     box-sizing: border-box;
     padding: 2px 7px;
     font-size: 16px;
@@ -69,18 +87,27 @@ input {
     border: 3px solid #01FD94;
     outline: none;
 } */
+ label {
+    font-size: 20px;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    margin-left: 15px;
+ }
  /* BOTÃO */
 button {
     background-color: var(--cordestaque);
     border-radius: 5px;
     border: 1px solid var(--corfont);
     width: 150px;
-    margin-top: 15px;
+    margin: 20px;
+    margin-bottom: 35px;
     height: 35px;
     font-size: 25px;
-    color: var(--corfont);
+    color: #2d2d31b1;
 }
 button:hover {
     background-color: #2d5e18;
+    color: var(--corfont);
 }
 /* FOOTER */
