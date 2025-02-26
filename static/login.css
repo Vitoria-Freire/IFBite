@@ -13,44 +13,25 @@ body, html {
     background-color: var(--corprimaria);
     color: var(--corfont);
     font-family: 'Roboto';
-    /* display: grid; */
-    /* grid-template-columns: repeat(12, 1fr); */
-    /* grid-column: 1/-1; */
     height: 100vh;
     width: 100%;
 }
 /* Divisão da tela */
 .metade-esquerda {
-    /* width: 50%; */
+    width: 50%;
     height: 100vh;
-    /* margin-right: 100px; */
     background-color: var(--corsecundaria);
     display: flex;
     padding: 0 100px;
-    border-radius: 0 50% 50% 0;
+    border-radius: 0 25% 25% 0;
     align-items: center;
     justify-content: center;
-}
-.metade-direita {
-    margin-left: 200px;
-    border: 1px solid red;
-    
-}
-/* LOGO */
-img {
-    border-radius: 50%;
-    width: 100px;
-    margin: 25px;
 }
 /* PRINCIPAL */
 .principal {
     display: flex;
-    /* align-items: center; */
     width: 100%;
     height: 100%;
-    /* grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr; */
     align-items: center;
     gap: 25px;
 }
@@ -71,6 +52,8 @@ img {
     border-radius: 5%;
     text-align: center;
     margin-left: 100px;
+    position: fixed;
+    right: 200px;
     z-index: 1;
 }
 .form {
