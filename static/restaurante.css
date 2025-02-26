@@ -14,7 +14,7 @@
 }
 
 body, html {
-    background-color: var(--corprimaria);
+    background-color: #F2F2F2;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -106,12 +106,12 @@ header img {
     color: var(--texto-escuro);
 }
 
+/* CONTAINER DE RESTAURANTES COM GRID DE 12 COLUNAS */
 .restaurantes-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr); /* Grid com 12 colunas */
     gap: 15px;
     width: 100%;
-    flex-grow: 1;
 }
 
 /* CARD DOS RESTAURANTES */
@@ -122,7 +122,7 @@ header img {
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
     padding: 15px;
-    grid-column: span 4;
+    grid-column: span 4; /* Cada loja ocupa 4 colunas */
 }
 
 .loja:hover {
@@ -149,3 +149,4 @@ footer {
     color: var(--texto-claro);
     margin-top: auto;
 }
+

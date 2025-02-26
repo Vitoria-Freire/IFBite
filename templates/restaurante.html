@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery</title>
+
     <link rel="stylesheet" href="/static/restaurante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+
+
+    <title>Delivery</title>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="logo">
+        <img src="img/Logo.png" alt="logo">
         <div class="login">
             <button>Entrar</button>
         </div>
@@ -20,41 +27,43 @@
     </section>
     
     <section class="filtros">
-        <label for="taxa-entrega">Taxa de Entrega:</label>
-        <select id="taxa-entrega">
-            <option value="todas">Todas</option>
-            <option value="gratis">Grátis</option>
-            <option value="baixa">Até R$5,00</option>
-        </select>
-        
-        <label for="tempo-entrega">Tempo de Entrega:</label>
-        <select id="tempo-entrega">
-            <option value="todas">Todos</option>
-            <option value="rapido">Até 30 min</option>
-            <option value="medio">30-60 min</option>
-        </select>
-        
-        <label for="avaliacao">Avaliação:</label>
-        <select id="avaliacao">
-            <option value="todas">Todas</option>
-            <option value="3">3 estrelas</option>
-            <option value="4">4 estrelas</option>
-            <option value="5">5 estrelas</option>
-        </select>
+        <form action="#" method="GET">
+            <label for="taxa-entrega">Taxa de Entrega:</label>
+            <select id="taxa-entrega" name="taxa-entrega">
+                <option value="todas">Todas</option>
+                <option value="gratis">Grátis</option>
+                <option value="baixa">Até R$5,00</option>
+            </select>
+            
+            <label for="tempo-entrega">Tempo de Entrega:</label>
+            <select id="tempo-entrega" name="tempo-entrega">
+                <option value="todas">Todos</option>
+                <option value="rapido">Até 30 min</option>
+                <option value="medio">30-60 min</option>
+            </select>
+            
+            <label for="avaliacao">Avaliação:</label>
+            <select id="avaliacao" name="avaliacao">
+                <option value="todas">Todas</option>
+                <option value="3">3 estrelas</option>
+                <option value="4">4 estrelas</option>
+                <option value="5">5 estrelas</option>
+            </select>
+        </form>
     </section>
     
     <section class="restaurantes">
         <h1>Lojas</h1>
         <div class="restaurantes-container">
-            <div class="loja" data-taxa="gratis" data-tempo="rapido" data-avaliacao="5">
+            <div class="loja">
                 <h2>Alessa´s Brigadeiro</h2>
                 <p>Entrega grátis | 25 min | ⭐⭐⭐⭐⭐</p>
             </div>
-            <div class="loja" data-taxa="baixa" data-tempo="medio" data-avaliacao="5">
+            <div class="loja">
                 <h2>Trufas da Bru</h2>
                 <p>Entrega até R$2,00 | 30 min | ⭐⭐⭐⭐⭐</p>
             </div>
-            <div class="loja" data-taxa="gratis" data-tempo="medio" data-avaliacao="3">
+            <div class="loja">
                 <h2>Cantina do if</h2>
                 <p>Entrega até R$5,00  | 50 min | ⭐⭐⭐</p>
             </div>
@@ -64,36 +73,5 @@
     <footer>
         <p>&copy; 2025 Delivery. Todos os direitos reservados.</p>
     </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const taxaSelect = document.getElementById("taxa-entrega");
-            const tempoSelect = document.getElementById("tempo-entrega");
-            const avaliacaoSelect = document.getElementById("avaliacao");
-            const lojas = document.querySelectorAll(".loja");
-
-            function filtrarLojas() {
-                const taxa = taxaSelect.value;
-                const tempo = tempoSelect.value;
-                const avaliacao = avaliacaoSelect.value;
-
-                lojas.forEach(loja => {
-                    const taxaLoja = loja.getAttribute("data-taxa");
-                    const tempoLoja = loja.getAttribute("data-tempo");
-                    const avaliacaoLoja = loja.getAttribute("data-avaliacao");
-
-                    const correspondeTaxa = (taxa === "todas" || taxa === taxaLoja);
-                    const correspondeTempo = (tempo === "todas" || tempo === tempoLoja);
-                    const correspondeAvaliacao = (avaliacao === "todas" || avaliacao === avaliacaoLoja);
-
-                    loja.style.display = (correspondeTaxa && correspondeTempo && correspondeAvaliacao) ? "flex" : "none";
-                });
-            }
-
-            [taxaSelect, tempoSelect, avaliacaoSelect].forEach(select => 
-                select.addEventListener("change", filtrarLojas)
-            );
-        });
-    </script>
 </body>
 </html>
