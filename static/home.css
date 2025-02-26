@@ -21,24 +21,27 @@ body, html {
 /* HEADER */
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: var(--corprimaria);
 }
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end ;
     width:  100%;
     max-width:  1200px;
     align-items: center;
 }
 .logo img {
-    height: 60px;
+    height: 80px;
+    margin-right: 0;
 }
 .actions {
     display: flex;
     align-items: center;
+    margin-left: auto;
+    margin-right: 0;
 }
 .lupa button,
 .login button {
@@ -46,7 +49,7 @@ header {
     border: none;
     color: var(--corprimaria);
     font-size:  30px;
-    margin-left: 15px;
+    margin-left: 5px;
     cursor: pointer;
 }
 .lupa button {
@@ -60,17 +63,17 @@ header {
     font-size: 16px;
 }
 
-/*SECTION*/
+/* SECTION */
 .logo-section {
     background-color: var(--corsecundaria);
     position: relative;
-    padding: 100px 30px 40px 50px;
+    padding: 0;
     text-align: center;
     overflow: hidden;
 }
 .logo-container img {
     max-width: 800px;
-    margin-bottom: 140px;
+    margin-bottom: 100px;
 }
 .onda img {
     position: absolute;
@@ -78,11 +81,9 @@ header {
     width: 100%;
     height: auto;
     bottom: 0;
-    left: 0;
+    left: 1px;
 }
-
-/* MAIN */
-
-
+ 
+/* SECTION */
 
 /* FOOTER */
