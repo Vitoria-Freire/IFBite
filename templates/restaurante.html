@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="/static/restaurante.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Delivery</title>
 </head>
 <body>
@@ -22,50 +17,47 @@
     </header>
     
     <section class="hero">
-        <h1>Promoções Especiais!</h1>
-        <p>Peça já o seu prato favorito com desconto.</p>
+        <h1>Peça seu delivery já!</h1>
+        <p>Promoções especiais</p>
+        <div class="promocoes">
+            <img src="img/promo1.jpg" alt="Promoção 1">
+            <img src="img/promo2.jpg" alt="Promoção 2">
+            <img src="img/promo3.jpg" alt="Promoção 3">
+        </div>
     </section>
     
     <section class="filtros">
-        <form action="#" method="GET">
-            <label for="taxa-entrega">Taxa de Entrega:</label>
-            <select id="taxa-entrega" name="taxa-entrega">
-                <option value="todas">Todas</option>
-                <option value="gratis">Grátis</option>
-                <option value="baixa">Até R$5,00</option>
-            </select>
-            
-            <label for="tempo-entrega">Tempo de Entrega:</label>
-            <select id="tempo-entrega" name="tempo-entrega">
-                <option value="todas">Todos</option>
-                <option value="rapido">Até 30 min</option>
-                <option value="medio">30-60 min</option>
-            </select>
-            
-            <label for="avaliacao">Avaliação:</label>
-            <select id="avaliacao" name="avaliacao">
-                <option value="todas">Todas</option>
-                <option value="3">3 estrelas</option>
-                <option value="4">4 estrelas</option>
-                <option value="5">5 estrelas</option>
-            </select>
-        </form>
+        <label for="filtro">Filtrar por:</label>
+        <select id="filtro">
+            <option value="taxa">Taxa de entrega</option>
+            <option value="avaliacao">Avaliação</option>
+            <option value="tempo">Tempo de entrega</option>
+        </select>
     </section>
     
     <section class="restaurantes">
         <h1>Lojas</h1>
         <div class="restaurantes-container">
             <div class="loja">
-                <h2>Alessa´s Brigadeiro</h2>
-                <p>Entrega grátis | 25 min | ⭐⭐⭐⭐⭐</p>
+                <img src="img/loja1.jpg" class="foto-loja" alt="Loja 1">
+                <div class="info">
+                    <h2>Alessa´s Brigadeiro</h2>
+                    <p>Entrega grátis | 25 min | ⭐⭐⭐⭐⭐</p>
+                </div>
             </div>
             <div class="loja">
-                <h2>Trufas da Bru</h2>
-                <p>Entrega até R$2,00 | 30 min | ⭐⭐⭐⭐⭐</p>
+                <img src="img/loja2.jpg" class="foto-loja" alt="Loja 2">
+                <div class="info">
+                    <h2>Trufas da Bru</h2>
+                    <p>Entrega até R$2,00 | 30 min | ⭐⭐⭐⭐⭐</p>
+                </div>
             </div>
             <div class="loja">
-                <h2>Cantina do if</h2>
-                <p>Entrega até R$5,00  | 50 min | ⭐⭐⭐</p>
+                <img src="img/loja3.jpg" class="foto-loja" alt="Loja 3">
+                <div class="info">
+                    <h2>Cantina do IF</h2>
+                    <p>Entrega até R$5,00 | 50 min | ⭐⭐⭐</p>
+                </div>
             </div>
         </div>
     </section>

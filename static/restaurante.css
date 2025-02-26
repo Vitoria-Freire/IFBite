@@ -14,14 +14,14 @@
 }
 
 body, html {
-    background-color: #F2F2F2;
+    background-color: var(--corprimaria);
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -51,41 +51,39 @@ header img {
 
 /* HERO */
 .hero {
-    background: url('promo.jpg') no-repeat center center/cover;
-    color: #B92616;
     text-align: center;
     padding: 50px 20px;
     width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-
 .hero h1 {
     font-size: 2rem;
-    margin: 0;
+    color: var(--corsecundaria);
 }
-
 .hero p {
     font-size: 1.2rem;
+}
+.promocoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.promocoes img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
 }
 
 /* FILTROS */
 .filtros {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
     padding: 20px;
     background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 1200px;
     border-radius: 8px;
 }
-
 .filtros label, .filtros select {
     font-size: 1rem;
     padding: 5px;
@@ -97,47 +95,50 @@ header img {
     max-width: 1200px;
     padding: 20px;
     text-align: center;
-    flex-grow: 1;
+    flex: 1;
 }
-
 .restaurantes h1 {
     font-size: 22px;
-    margin-bottom: 15px;
     color: var(--texto-escuro);
 }
-
-/* CONTAINER DE RESTAURANTES COM GRID DE 12 COLUNAS */
 .restaurantes-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* Grid com 12 colunas */
+    grid-template-columns: repeat(12, 1fr);
     gap: 15px;
     width: 100%;
 }
-
-/* CARD DOS RESTAURANTES */
 .loja {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.2s ease-in-out;
     padding: 15px;
-    grid-column: span 4; /* Cada loja ocupa 4 colunas */
+    grid-column: span 4;
+    text-align: center;
+}
+.loja img.foto-loja {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
-.loja:hover {
-    transform: scale(1.05);
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .restaurantes-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .loja {
+        grid-column: span 4;
+    }
 }
 
-.loja h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: var(--texto-escuro);
-}
-
-.loja p {
-    font-size: 14px;
-    color: #666;
+@media (max-width: 480px) {
+    .restaurantes-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .loja {
+        grid-column: span 1;
+    }
 }
 
 /* FOOTER */
@@ -149,4 +150,3 @@ footer {
     color: var(--texto-claro);
     margin-top: auto;
 }
-
