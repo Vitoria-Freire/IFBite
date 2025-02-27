@@ -33,7 +33,11 @@ header {
     max-width:  1200px;
     align-items: center;
 }
-
+.header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
 .logo img {
     height: 100px;
 }
@@ -52,7 +56,6 @@ header {
     cursor: pointer;
     margin-left: 5px;
 }
-
 .actions button:first-child {
     font-size: 25px;
 }
@@ -102,6 +105,7 @@ header {
     color: var(--corfont);
 }
 /* SECTION CORROSEL */
+/* SECTION CORROSEL */
 .corrosel-container {
     width: 100%;
     overflow: hidden;
@@ -110,7 +114,7 @@ header {
 
 .corrosel {
     display: flex;
-    animation: slide 10s infinite;
+    animation: slide 8s infinite;
 }
 
 .corrosel-item {
@@ -119,7 +123,7 @@ header {
 
 .corrosel img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -134,13 +138,12 @@ header {
         transform: translateX(-200%);
     }
     75% {
-        transform: translateX(-300%);
+        transform: translateX(-100%);
     }
     100% {
         transform: translateX(0);
     }
 }
-
 /* SECTION CARDS */
 .cards-container {
     display: flex;
