@@ -18,7 +18,22 @@ body, html {
     grid-column: 1/-1;
 }
 /* HEADER */
-
+header {
+    background-color: var(--corsecundaria);
+    grid-column: 1/-1;
+    height: 120px;
+    color: var(--corprimaria);
+    display: flex;
+}
+header img {
+    width: 120px;
+    height: auto;
+}
+header ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 /* MAIN */
 /* FOOTER */
 footer {
@@ -42,4 +57,8 @@ footer ul {
     list-style: none;
     padding: 15px 0;
     justify-content: center;
+}
+li :hover {
+    color: #6ba156;
+    transform: scale(1.2);
 }
