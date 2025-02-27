@@ -65,9 +65,9 @@ form {
     padding: 20px;
     margin: 40px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
-    background-color: #b9261670;
+    background-color: #b926166a;
     box-shadow: 3px 3px 15px var(--corfont);
 }
 form h3 {
@@ -93,6 +93,50 @@ label {
     margin-top: 15px;
     margin-left: 2px;
     font-weight: 300;
+}
+/* CARDS */
+.card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.card {
+    display: inline-block;
+    background-color: var(--corsecundaria);
+    color: var(--corprimaria);
+    border: 1px solid var(--corfont);
+    border-radius: 10px;
+    padding: 15px;
+    width: calc(35.50% - 35px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;  /* Ajuste da margem inferior */
+    box-sizing: border-box;
+}
+.cards {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; 
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px var(--corfont);
+}
+.card p {
+    /* font-family: var(--titulos); */
+    font-size: 20px;
+    margin-top: 10px;
+}
+.card .botoes {
+    margin: 0;
+    justify-content: space-around;
+}
+.card button {
+    width: 100px;
+    height: 40px;
 }
  /* BOTÃO */
 .botoes {
@@ -142,6 +186,11 @@ li :hover {
     transform: scale(1.2);
 }
 /* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
 @media (max-width: 480px) {
     form {
         margin: 20px 0;
@@ -151,5 +200,8 @@ li :hover {
     }
     header li {
         display: none;
+    }
+    .card {
+        width: 100%;
     }
 }
