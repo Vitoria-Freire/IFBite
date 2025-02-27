@@ -2,22 +2,21 @@
 * {
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
 }
+
 :root {
     --corprimaria : #F2F2F2;
     --corsecundaria: #B92616;
     --cordestaque:#367A1C;
     --corfont: #2D2D31;
 }
+
 body, html {
     background-color: var(--corprimaria);
     font-family: 'Roboto';
-    /* display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-column: 1/-1; */
 }
+
 /* HEADER */
 header {
     display: flex;
@@ -26,6 +25,7 @@ header {
     padding: 10px 20px;
     background-color: var(--corprimaria);
 }
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -33,16 +33,17 @@ header {
     max-width:  1200px;
     align-items: center;
 }
+
 .logo img {
     height: 100px;
 }
-
 
 .actions {
     display: flex;
     align-items: center;
     margin-left: auto;
 }
+
 .actions button {
     background-color: transparent;
     color: var(--corfont);
@@ -51,14 +52,17 @@ header {
     cursor: pointer;
     margin-left: 5px;
 }
+
 .actions button:first-child {
     font-size: 25px;
 }
+
 .login {
     display: flex;
     align-items: center;
     margin-left: 10px;
 }
+
 .login button {
     background-color: var(--cordestaque);
     color: white;
@@ -66,6 +70,7 @@ header {
     padding: 8px 15px;
     font-size: 20px; 
 }
+
 /* SECTION */
 .logo-section {
     background-color: var(--corsecundaria);
@@ -74,12 +79,14 @@ header {
     text-align: center;
     overflow: hidden;
 }
+
 .logo-container img {
     max-width: 800px;
     margin-bottom: 100px;
     position: relative;
     top: -45px;
 }
+
 .onda img {
     position: absolute;
     bottom: 0;
@@ -87,25 +94,30 @@ header {
     height: auto;
     bottom: 0;
     left: -5px;
-
 }
-/*SECTION CARROSEL*/
-.carousel-container {
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 32px;
+    color: var(--corfont);
+}
+/* SECTION CORROSEL */
+.corrosel-container {
     width: 100%;
     overflow: hidden;
     margin-bottom: 40px;
 }
 
-.carousel {
+.corrosel {
     display: flex;
     animation: slide 10s infinite;
 }
 
-.carousel-item {
+.corrosel-item {
     flex: 0 0 100%;
 }
 
-.carousel img {
+.corrosel img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -129,7 +141,7 @@ header {
     }
 }
 
-/* SECTION CARDS*/
+/* SECTION CARDS */
 .cards-container {
     display: flex;
     justify-content: space-between; 
@@ -168,7 +180,6 @@ header {
     transform: scale(1.05);  
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
 }
-
 
 /* FOOTER */
 footer {
