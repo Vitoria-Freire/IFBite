@@ -86,8 +86,49 @@ header {
     width: 105%;
     height: auto;
     bottom: 0;
-    left: -4px;
+    left: -5px;
+
 }
+/*SECTION CARROSEL*/
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    animation: slide 10s infinite;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* SECTION CARDS*/
 .cards-container {
     display: flex;
@@ -127,5 +168,6 @@ header {
     transform: scale(1.05);  
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
 }
+
 
 /* FOOTER */
