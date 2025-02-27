@@ -39,16 +39,6 @@ header img {
     height: 50px;
 }
 
-.login button {
-    background-color: var(--texto-claro);
-    color: var(--corsecundaria);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
 /* HERO */
 .hero {
     text-align: center;
@@ -68,11 +58,31 @@ header img {
     gap: 15px;
     margin-top: 20px;
 }
-.promocoes img {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
+
+.promocoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    padding: 10px;
 }
+
+.promocoes img {
+    width: 250px; /* Tamanho padrão para todas */
+    height: 200px;
+    border-radius: 8px;
+    flex: 0 0 auto;
+}
+
+/* Faz a primeira imagem maior */
+.promocoes img:nth-child(1) {
+    width: 450px; /* Maior que as outras */
+    max-width: 100%; /* Evita problemas em telas pequenas */
+}
+
 
 /* FILTROS */
 .filtros {
@@ -122,6 +132,34 @@ header img {
     border-radius: 50%;
 }
 
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: var(--corsecundaria);
+    color: var(--corprimaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+footer img {
+    width: 120px;
+    height: auto;
+}
+footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: center;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .restaurantes-container {
@@ -130,23 +168,61 @@ header img {
     .loja {
         grid-column: span 4;
     }
-}
+    
+    footer {
+        padding: 15px;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-@media (max-width: 480px) {
     .restaurantes-container {
         grid-template-columns: repeat(1, 1fr);
     }
     .loja {
         grid-column: span 1;
     }
+    
+    footer {
+        padding: 10px;
+    }
+    footer img {
+        width: 100px; /* Reduz o tamanho do logo */
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    footer ul li {
+        font-size: 0.9rem;
+    }
 }
 
-/* FOOTER */
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--corsecundaria);
-    color: var(--texto-claro);
-    margin-top: auto;
+@media (max-width: 768px) {
+    .promocoes img {
+        width: 200px;
+        height: auto;
+    }
+
+    .promocoes img:nth-child(1) {
+        width: 300px; /* Ainda maior que as outras, mas proporcional */
+    }
+}
+
+@media (max-width: 480px) {
+    .promocoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .promocoes img {
+        width: 90%; /* Todas as imagens ficam responsivas */
+        max-width: 300px;
+    }
+
+    .promocoes img:nth-child(1) {
+        width: 95%; /* Mantém maior, mas dentro da tela */
+        max-width: 350px;
+    }
 }
