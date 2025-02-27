@@ -22,6 +22,7 @@ body, html {
     width: 100%;
     overflow-x: hidden;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 /* HEADER */
@@ -32,21 +33,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 30px;
 }
 
 header img {
-    height: 50px;
+    height: 60px;
 }
 
-.login button {
-    background-color: var(--texto-claro);
-    color: var(--corsecundaria);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-size: 1rem;
     font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* HERO */
@@ -69,9 +81,20 @@ header img {
     margin-top: 20px;
 }
 .promocoes img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     border-radius: 8px;
+}
+
+.promocoes img:first-child {
+    width: 500px;
+    height: 250px;
+}
+
+@media (max-width: 768px) {
+    .promocoes img:first-child {
+        display: none;
+    }
 }
 
 /* FILTROS */
@@ -115,11 +138,47 @@ header img {
     padding: 15px;
     grid-column: span 4;
     text-align: center;
+    margin-top: 5%;
 }
 .loja img.foto-loja {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: var(--corsecundaria);
+    color: var(--corprimaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 10%;
+}
+
+footer img {
+    width: 120px;
+    height: auto;
+}
+footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: center;
+}
+
+/* LINKS DE NAVEGAÇÃO */
+nav ul li a[href="#restaurantes"],
+nav ul li a[href="#footer"] {
+    scroll-behavior: smooth;
 }
 
 /* RESPONSIVIDADE */
@@ -130,6 +189,14 @@ header img {
     .loja {
         grid-column: span 4;
     }
+    
+    footer {
+        padding: 15px;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -139,14 +206,18 @@ header img {
     .loja {
         grid-column: span 1;
     }
-}
-
-/* FOOTER */
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--corsecundaria);
-    color: var(--texto-claro);
-    margin-top: auto;
+    
+    footer {
+        padding: 10px;
+    }
+    footer img {
+        width: 100px;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    footer ul li {
+        font-size: 0.9rem;
+    }
 }
