@@ -7,7 +7,7 @@
 :root {
     --corprimaria : #F2F2F2;
     --corsecundaria: #B92616;
-    --cordestaque:#367A1C;
+    --cordestaque:#6BA156;
     --corfont: #2D2D31;
 }
 body, html {
@@ -16,6 +16,7 @@ body, html {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1/-1;
+    overflow-x: hidden;
 }
 /* HEADER */
 header {
@@ -27,22 +28,91 @@ header {
     align-items: center;
 }
 header img {
-    width: 120px;
+    width: 110px;
     height: auto;
+    margin-left: 30px;
 }
 header ul {
+    width: 85%;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     list-style: none;
+    justify-content:flex-end;
 }
 header li {
     justify-content: flex-end;
+    margin-left: 5px;
+}
+a {
+    text-decoration: none;
+    color: var(--corprimaria);
+    display: flex;
+}
+a:hover {
+    color: var(--cordestaque);
+    transform: scale(1.2);
 }
 /* MAIN */
 main {
     grid-column: 3/10;
     color: var(--corfont);
     margin: 10px 0;
+}
+/* NOVOS PRODUTOS */
+form {
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #b9261670;
+    box-shadow: 3px 3px 15px var(--corfont);
+}
+form h3 {
+    color: var(--corfont);
+    font-size: 30px;
+    text-align: center;
+}
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #2d2d316a;
+    box-sizing: border-box;
+    padding: 2px 7px;
+    font-size: 16px;
+    background-color: var(--corprimaria);
+}
+input:focus {
+    border: 3px solid #968684;
+    outline: none;
+}
+label {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 2px;
+    font-weight: 300;
+}
+ /* BOTÃO */
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 20px;
+}
+button {
+    background-color: #2d5e18;
+    border-radius: 10px;
+    border: 1px solid var(--corfont);
+    width: 150px;
+    margin-top: 30px;
+    height: 45px;
+    font-size: 25px;
+    color: var(--corprimaria);
+}
+button:hover {
+    background-color: var(--cordestaque);
+    color: var(--corfont);
 }
 /* FOOTER */
 footer {
@@ -68,6 +138,18 @@ footer ul {
     justify-content: center;
 }
 li :hover {
-    color: #6ba156;
+    color: var(--cordestaque);
     transform: scale(1.2);
+}
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    form {
+        margin: 20px 0;
+    }
+    header ul {
+        width: 60%;
+    }
+    header li {
+        display: none;
+    }
 }

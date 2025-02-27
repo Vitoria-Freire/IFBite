@@ -9,31 +9,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="/templates/img/Logo.png">
     <title>Painel do restaurante</title>
 </head>
 <body>
     <header>
         <img src="/templates/img/logoBranca.png" alt="">
         <ul>
-            <li>Cadastrar</li>
-            <li>Editar</li>
-            <li>Em andamento</li>
-            <li>Vendas</li>
+            <a href="#new">
+                <i class="fa-solid fa-utensils"></i>
+                <li>Cadastrar</li>
+            </a>
+            <a href="#menu">
+                <i class="fa-solid fa-file-pen"></i>
+                <li>Editar</li>
+            </a>
+            <a href="#action">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <li>Em andamento</li>
+            </a>
+            <a href="#vision">
+                <i class="fa-solid fa-chart-line"></i>
+                <li>Vendas</li>
+            </a>
         </ul>
     </header>
     <main>
-        <section>
-            <h1>Cadastrar Novas Delícias</h1>
+        <section id="new">
+            <h1>Novo no Cardápio</h1>
+            <form action="" method="get">
+                <h3>Adicionar Novo Produto</h3>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome">
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao">
+                <label for="preco">Preço:</label>
+                <input type="number" step="0.01" min="0" placeholder="R$ 0,00">
+                <label for="time">Tempo:</label>
+                <input type="time" name="time">
+                <label for="categoria">Categoria:</label>
+                <input list="categoria" name="categoria">
+                <datalist id="categoria">
+                    <option value="Salgados">
+                    <option value="Doces">
+                    <option value="Bebidas">
+                    <option value="Gelados">
+                </datalist>
+                <label for="img">Imagem:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*">
+                <section class="botoes">
+                    <button type="submit">Adicionar</button>
+                    <button type="reset">Cancelar</button>
+                </section>
+            </form>
         </section>
-        <section>
-            <h1>Editar Cardápio</h1>
+        <section id="menu">
+            <h1>Ajuste seu Menu</h1>
         </section>
-        <section>
-            <h1>Pedidos em Andamento</h1>
+        <section id="action">
+            <h1>Pedidos em Ação</h1>
         </section>
-        <section>
-            <h1>Relatório de Vendas</h1>
+        <section id="vision">
+            <h1>Visão de Vendas</h1>
         </section>
     </main>
     <footer>
