@@ -22,6 +22,7 @@ body, html {
     width: 100%;
     overflow-x: hidden;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 /* HEADER */
@@ -32,11 +33,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 30px;
 }
 
 header img {
-    height: 50px;
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* HERO */
@@ -58,31 +80,22 @@ header img {
     gap: 15px;
     margin-top: 20px;
 }
-
-.promocoes {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    max-width: 100%;
-    padding: 10px;
-}
-
 .promocoes img {
-    width: 250px; /* Tamanho padrão para todas */
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 8px;
-    flex: 0 0 auto;
 }
 
-/* Faz a primeira imagem maior */
-.promocoes img:nth-child(1) {
-    width: 450px; /* Maior que as outras */
-    max-width: 100%; /* Evita problemas em telas pequenas */
+.promocoes img:first-child {
+    width: 500px;
+    height: 250px;
 }
 
+@media (max-width: 768px) {
+    .promocoes img:first-child {
+        display: none;
+    }
+}
 
 /* FILTROS */
 .filtros {
@@ -93,7 +106,6 @@ header img {
     width: 90%;
     max-width: 1200px;
     border-radius: 8px;
-    margin-top: 5%;
 }
 .filtros label, .filtros select {
     font-size: 1rem;
@@ -126,6 +138,7 @@ header img {
     padding: 15px;
     grid-column: span 4;
     text-align: center;
+    margin-top: 5%;
 }
 .loja img.foto-loja {
     width: 80px;
@@ -162,6 +175,12 @@ footer ul {
     justify-content: center;
 }
 
+/* LINKS DE NAVEGAÇÃO */
+nav ul li a[href="#restaurantes"],
+nav ul li a[href="#footer"] {
+    scroll-behavior: smooth;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .restaurantes-container {
@@ -178,7 +197,9 @@ footer ul {
         flex-direction: column;
         gap: 10px;
     }
+}
 
+@media (max-width: 480px) {
     .restaurantes-container {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -190,7 +211,7 @@ footer ul {
         padding: 10px;
     }
     footer img {
-        width: 100px; /* Reduz o tamanho do logo */
+        width: 100px;
     }
     footer ul {
         flex-direction: column;
@@ -198,33 +219,5 @@ footer ul {
     }
     footer ul li {
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .promocoes img {
-        width: 200px;
-        height: auto;
-    }
-
-    .promocoes img:nth-child(1) {
-        width: 300px; /* Ainda maior que as outras, mas proporcional */
-    }
-}
-
-@media (max-width: 480px) {
-    .promocoes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .promocoes img {
-        width: 90%; /* Todas as imagens ficam responsivas */
-        max-width: 300px;
-    }
-
-    .promocoes img:nth-child(1) {
-        width: 95%; /* Mantém maior, mas dentro da tela */
-        max-width: 350px;
     }
 }
