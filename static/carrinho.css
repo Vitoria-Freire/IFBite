@@ -27,7 +27,7 @@ header {
    padding: 15px;
    background-color: var(--corsecundaria);
    grid-column: 1 / -1;
-   height: 100px;
+   height: 110px;
    position: relative;
 }
 .logo {
@@ -42,7 +42,7 @@ header .logo {
    font-size: 40px;
    color: var(--corprimaria);
    position: absolute;
-   left: 15px;
+   left: 22px;
    top: 50%;
    transform: translateY(-50%);
    text-decoration: none;
@@ -52,10 +52,20 @@ header .logo {
    font-size: 42px;
 }
  
- /* MAIN */
+/* MAIN */
+main{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+   grid-column: 2/ 12;
+   height: 100px;
+   position: relative;
+   border: 5px solid var(--cordestaque);
+}
 
- /* FOOTER */
- footer {
+/* FOOTER */
+footer {
    background-color: var(--corsecundaria);
    grid-column: 1/-1;
    color: var(--corprimaria);
@@ -65,18 +75,18 @@ header .logo {
    justify-content: center;
    text-align: center;
    padding: 20px;
- }
- footer img {
+}
+footer img {
    width: 120px;
    height: auto;
- }
- footer ul {
+}
+footer ul {
    display: flex;
    gap: 20px;
    list-style: none;
    padding: 15px 0;
    justify-content: center;
- }
+}
 
 /* RESPONSIVO */
 @media screen and (max-width: 390px) {
