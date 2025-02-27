@@ -24,6 +24,7 @@ header {
     height: 120px;
     color: var(--corprimaria);
     display: flex;
+    align-items: center;
 }
 header img {
     width: 120px;
@@ -34,7 +35,15 @@ header ul {
     gap: 20px;
     list-style: none;
 }
+header li {
+    justify-content: flex-end;
+}
 /* MAIN */
+main {
+    grid-column: 3/10;
+    color: var(--corfont);
+    margin: 10px 0;
+}
 /* FOOTER */
 footer {
     background-color: var(--corsecundaria);
