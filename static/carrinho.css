@@ -53,7 +53,7 @@ header .logo {
 }
  
 /* MAIN */
-main{
+main {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -63,6 +63,53 @@ main{
    position: relative;
    border: 5px solid var(--cordestaque);
 }
+
+.titulo {
+   text-align: left;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center; /* Alinha o título verticalmente com as bolinhas */
+   flex: 1;
+   font-size: 24px;
+   color: var(--corsecundaria)
+}
+.textProgresso{
+   font-size: 20px;
+}
+.linhaProgresso {
+   display: flex;
+   align-items: center;  /* Alinha as bolinhas verticalmente */
+   gap: 25px;
+   margin-left: 20px;  /* Espaço entre o título e as bolinhas */
+}
+
+.progress-bar-bolinhas {
+   list-style: none;
+   display: flex;
+   gap: 30px;
+   padding: 0;
+   margin: 0;
+}
+
+.bolinha {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: white;
+   border: 2px solid red; /* Borda vermelha por padrão */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: red;
+   font-weight: bold;
+}
+
+.bolinha.completo {
+   background-color: #367A1C; /* Cor de fundo verde quando completo */
+   border: 2px solid #367A1C; /* Borda verde */
+   color: white; /* Texto branco dentro da bolinha */
+}
+
 
 /* FOOTER */
 footer {
@@ -104,5 +151,51 @@ footer ul {
    }
    .home-icon{
       font-size: 24px;
+   }
+   
+}
+
+@media screen and (max-width: 1000px) {
+   main {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+   }
+
+   .titulo {
+      font-size: 30px; /* Aumenta o tamanho do título */
+      text-align: center; /* Centraliza o título */
+      margin-bottom: 20px; /* Aumenta o espaçamento entre título e bolinhas */
+   }
+
+   .linhaProgresso {
+      gap: 10px; /* Ajusta o espaço entre as bolinhas */
+      justify-content: center; /* Centraliza as bolinhas */
+      flex-wrap: wrap;
+      margin-top: 0;
+   }
+
+   .progress-bar-bolinhas {
+      gap: 15px; /* Ajusta o espaço entre as bolinhas */
+      left:30px;
+   }
+
+   .bolinha {
+      width: 15px; /* Tamanho bem pequeno das bolinhas */
+      height: 15px; /* Tamanho bem pequeno das bolinhas */
+      font-size: 5px; /* Reduz o tamanho do texto */
+      color: transparent; /* Remove o texto */
+      background-color: transparent; /* Deixa o fundo transparente */
+      margin-bottom: 5px; /* Ajuste o espaçamento vertical */
+   }
+
+   .bolinha.completo {
+      background-color: #367A1C;
+      color: transparent;
+      font-size: 10;
+   }
+
+   .textProgresso {
+      font-size: 20px;
    }
 }
