@@ -33,7 +33,7 @@ header {
     max-width:  1200px;
     align-items: center;
 }
-.header-actions {
+.header {
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -42,36 +42,38 @@ header {
     height: 100px;
 }
 
-.actions {
+.search {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    
 }
 
-.actions button {
-    background-color: transparent;
-    color: var(--corfont);
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-.actions button:first-child {
-    font-size: 25px;
+.search input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 7px;
+    border: 2px solid var(--corsecundaria);
+    width: 200px;
+    margin-right: 30px; 
 }
 
+.search input:focus {
+    outline: none;
+}
 .login {
     display: flex;
     align-items: center;
-    margin-left: 10px;
 }
 
 .login button {
     background-color: var(--cordestaque);
     color: white;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 8px 15px;
     font-size: 20px; 
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
 /* SECTION */
@@ -81,6 +83,7 @@ header {
     padding: 0;
     text-align: center;
     overflow: hidden;
+    margin-bottom: -105px ;
 }
 
 .logo-container img {
@@ -105,11 +108,11 @@ header {
     color: var(--corfont);
 }
 /* SECTION CORROSEL */
-/* SECTION CORROSEL */
 .corrosel-container {
     width: 100%;
     overflow: hidden;
     margin-bottom: 40px;
+    margin-bottom: 170px;
 }
 
 .corrosel {
@@ -148,8 +151,9 @@ header {
 .cards-container {
     display: flex;
     justify-content: space-between; 
-    align-items: center; 
-    margin: 40px auto;  
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px auto 60px;  
     width: 100%;
     max-width: 1200px; 
     gap: 20px;  
@@ -180,6 +184,46 @@ header {
 }
 
 .card:hover {
+    transform: scale(1.05);  
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+}
+.restaurants-container {
+    display: flex;
+    margin-top: 80px;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
+    align-items: center;
+    margin: 40px auto 60px;  
+    width: 100%;
+    max-width: 1200px; 
+    gap: 20px; 
+}
+
+.restaurants-container .card {
+    background-color: var(--corprimaria);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cordestaque);
+}
+
+.restaurants-container .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.restaurants-container .card h3 {
+    margin-top: 15px;
+    color: var(--corfont);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.restaurants-container .card:hover {
     transform: scale(1.05);  
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
 }
