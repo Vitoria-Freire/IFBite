@@ -2,7 +2,7 @@
 * {
    margin: 0;
    padding: 0;
-   border: 1px solid red;
+   border: 2px solid red
 }
 :root {
    --corprimaria : #F2F2F2;
@@ -52,8 +52,8 @@ header .logo {
    font-size: 42px;
 }
  
-/* MAIN */
-main {
+/* CONTAINER DO TITULO*/
+.containerTitulo {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -61,9 +61,8 @@ main {
    grid-column: 2/ 12;
    height: 100px;
    position: relative;
-   border: 5px solid var(--cordestaque);
+   border-bottom: 5px solid var(--cordestaque);
 }
-
 .titulo {
    text-align: left;
    display: flex;
@@ -82,7 +81,6 @@ main {
    gap: 25px;
    margin-left: 20px;  /* Espaço entre o título e as bolinhas */
 }
-
 .progress-bar-bolinhas {
    list-style: none;
    display: flex;
@@ -90,7 +88,6 @@ main {
    padding: 0;
    margin: 0;
 }
-
 .bolinha {
    width: 50px;
    height: 50px;
@@ -103,14 +100,22 @@ main {
    color: red;
    font-weight: bold;
 }
-
 .bolinha.completo {
    background-color: #367A1C; /* Cor de fundo verde quando completo */
    border: 2px solid #367A1C; /* Borda verde */
    color: white; /* Texto branco dentro da bolinha */
 }
 
-
+/* MAIN*/
+main{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+   grid-column: 2/ 12;
+   height: 100px;
+   position: relative;
+}
 /* FOOTER */
 footer {
    background-color: var(--corsecundaria);
@@ -137,9 +142,6 @@ footer ul {
 
 /* RESPONSIVO */
 @media screen and (max-width: 390px) {
-   body, html {
-      grid-template-columns: 1fr;
-   }
    header {
       flex-direction: row;
       justify-content: center;
@@ -152,16 +154,51 @@ footer ul {
    .home-icon{
       font-size: 24px;
    }
-   
+   .containerTitulo {
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+   }
+   .titulo {
+      font-size: 15px; /* Aumenta o tamanho do título */
+      text-align: center; /* Centraliza o título */
+      margin-bottom: 10px; /* Aumenta o espaçamento entre título e bolinhas */
+   }
+
+   .linhaProgresso {
+      gap: 10px; /* Ajusta o espaço entre as bolinhas */
+      justify-content: center; /* Centraliza as bolinhas */
+      flex-wrap: wrap;
+      margin-top: 0;
+   }
+   .progress-bar-bolinhas {
+      gap: 15px; /* Ajusta o espaço entre as bolinhas */
+      left:30px;
+   }
+   .bolinha {
+      width: 10px; /* Tamanho bem pequeno das bolinhas */
+      height: 10px; /* Tamanho bem pequeno das bolinhas */
+      font-size: 5px; /* Reduz o tamanho do texto */
+      color: transparent; /* Remove o texto */
+      background-color: transparent; /* Deixa o fundo transparente */
+      margin-bottom: 5px; /* Ajuste o espaçamento vertical */
+   }
+   .bolinha.completo {
+      background-color: #367A1C;
+      color: transparent;
+      font-size: 10;
+   }
+   .textProgresso {
+      font-size: 20px;
+   }
 }
 
 @media screen and (max-width: 1000px) {
-   main {
+   .containerTitulo {
       flex-direction: column;
       height: auto;
       padding: 20px;
    }
-
    .titulo {
       font-size: 30px; /* Aumenta o tamanho do título */
       text-align: center; /* Centraliza o título */
@@ -174,12 +211,10 @@ footer ul {
       flex-wrap: wrap;
       margin-top: 0;
    }
-
    .progress-bar-bolinhas {
       gap: 15px; /* Ajusta o espaço entre as bolinhas */
       left:30px;
    }
-
    .bolinha {
       width: 15px; /* Tamanho bem pequeno das bolinhas */
       height: 15px; /* Tamanho bem pequeno das bolinhas */
@@ -188,13 +223,11 @@ footer ul {
       background-color: transparent; /* Deixa o fundo transparente */
       margin-bottom: 5px; /* Ajuste o espaçamento vertical */
    }
-
    .bolinha.completo {
       background-color: #367A1C;
       color: transparent;
       font-size: 10;
    }
-
    .textProgresso {
       font-size: 20px;
    }
