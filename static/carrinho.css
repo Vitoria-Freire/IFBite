@@ -61,7 +61,6 @@ header .logo {
    grid-column: 2/ 12;
    height: 100px;
    position: relative;
-   border-bottom: 5px solid var(--cordestaque);
 }
 .titulo {
    text-align: left;
@@ -106,16 +105,42 @@ header .logo {
    color: white; /* Texto branco dentro da bolinha */
 }
 
-/* MAIN*/
-main{
+/* BARRA DE INFO */
+.info {
    display: flex;
-   justify-content: center;
+   justify-content: space-between; /* Espaça os itens igualmente entre os extremos */
    align-items: center;
    padding: 15px;
-   grid-column: 2/ 12;
-   height: 100px;
+   grid-column: 2 / 12;
+   height: 50px;
    position: relative;
+   background-color: #B92616;
+   width: 100%;
+   box-sizing: border-box;
 }
+
+.textProduto {
+   text-align: left;
+   flex: 1;
+   font-size: 15px;
+   color: var(--corprimaria);
+}
+
+.textQuanti, .textValor {
+   text-align: right;
+   font-size: 15px;
+   color: var(--corprimaria);
+}
+
+.textQuanti {
+   margin-right: 23%; /* Ajusta o espaçamento da quantidade */
+}
+
+/* Media query para telas pequenas (até 390px de largura) */
+@media screen and (max-width: 390px) {
+   
+}
+
 /* FOOTER */
 footer {
    background-color: var(--corsecundaria);
@@ -190,6 +215,35 @@ footer ul {
    }
    .textProgresso {
       font-size: 20px;
+   }
+   .info {
+      padding: 10px; /* Ajusta o padding para telas menores */
+      height: auto; /* Deixa a altura adaptável */
+      flex-direction: row; /* Mantém os itens lado a lado */
+      overflow: hidden; /* Garante que o conteúdo não ultrapasse o limite */
+      flex-wrap: wrap; /* Permite que os itens se reorganizem se necessário */
+   }
+
+   .textProduto {
+      text-align: left;
+      font-size: 8px; /* Ajusta o tamanho da fonte para telas pequenas */
+      margin-bottom: 0; /* Remove a margem inferior */
+      flex: 0; /* Deixa o produto ocupar todo o espaço disponível */
+      margin-right: 10px; /* Adiciona um pequeno espaço entre os itens */
+   }
+
+   .textQuanti, .textValor {
+      text-align: right; /* Mantém o alinhamento à direita */
+      font-size: 8px; /* Ajusta o tamanho da fonte */
+      margin-right: 10px; /* Ajusta o espaço entre a quantidade e o valor */
+   }
+
+   .textQuanti {
+      margin-right: 15px; /* Ajusta o espaço entre quantidade e valor */
+   }
+
+   .textValor {
+      margin-left: 10px; /* Garante um pequeno espaçamento à esquerda */
    }
 }
 
