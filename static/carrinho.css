@@ -238,9 +238,48 @@ header .logo {
 }
 .precoTotal{
    font-size: 10px;
-   color: var(--cordestaque);
+   color: var(--corfont);
    margin-left: auto;
 }
+
+/*BOTOES DE FINALIZAR*/
+.botao-container {
+   display: grid;
+   padding: 15px;
+   grid-column: 2 / 12;
+   height: 80px;
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
+   margin-bottom: 20px;
+}
+.continuar-btn, .finalizar-btn {
+   padding: 8px 12px;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 5px;
+   border: none;
+   box-sizing: border-box;
+   width: 100%; /* Faz os botões ocuparem 100% da largura do contêiner */
+}
+.continuar-btn {
+   color: var(--corsecundaria);
+   grid-column: 1;
+}
+.continuar-btn:hover {
+   color: var(--cordestaque);
+}
+.finalizar-btn {
+   background-color: var(--cordestaque);
+   color: white;
+   grid-column: 3;
+   text-align: center;
+   text-decoration: none;
+}
+.finalizar-btn:hover {
+   opacity: 0.6;
+}
+
 /* FOOTER */
 footer {
    background-color: var(--corsecundaria);
@@ -380,6 +419,22 @@ footer ul {
       width: auto; 
       margin-top: 10px;
    }
+   /*BOTOES DE FINALIZAR*/
+   .botao-container {
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between; 
+      height: auto;
+   }
+   .continuar-btn, .finalizar-btn {
+      width: 100%; 
+      margin-bottom: 10px;
+   }
+   .finalizar-btn {
+      margin-bottom: 0; 
+      order: -1;
+   }
+
 }
 @media screen and (max-width: 870px){
    /* EXIBINDO PRODUTOS*/
@@ -428,6 +483,21 @@ footer ul {
    .remove-btn {
       width: auto; /* Deixa o botão "remover" com largura automática */
       margin-top: 10px; /* Adiciona margem superior para espaçar os botões */
+   }
+   /*BOTOES DE FINALIZAR*/
+   .botao-container {
+      display: flex;
+      flex-direction: column; /* Alinha os botões verticalmente */
+      justify-content: space-between; /* Adiciona espaçamento entre os botões */
+      height: auto; /* Ajusta a altura para caber o conteúdo */
+   }
+   .continuar-btn, .finalizar-btn {
+      width: 100%; /* Garante que os botões tenham 100% de largura */
+      margin-bottom: 10px; /* Adiciona espaçamento entre os botões */
+   }
+   .finalizar-btn {
+      margin-bottom: 0; /* Remove a margem inferior do botão "Finalizar Compra" */
+      order: -1; /* Coloca o botão "Finalizar Compra" em cima */
    }
 }
 @media screen and (max-width: 1000px) {
