@@ -7,7 +7,8 @@
 :root {
     --corprimaria : #F2F2F2;
     --corsecundaria: #B92616;
-    --cordestaque:#6BA156;
+    /* --cordestaque:#6BA156; */
+    --cordestaque:#4CAF50;
     --corfont: #2D2D31;
 }
 body, html {
@@ -54,25 +55,33 @@ a:hover {
 }
 /* MAIN */
 main {
-    grid-column: 3/10;
+    grid-column: 3/11;
     color: var(--corfont);
     margin: 10px 0;
 }
 /* NOVOS PRODUTOS */
+#new{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 30px;
+}
 form {
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     padding: 20px;
-    margin: 40px;
+    margin: 30px 0;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-direction: column;
     background-color: #b926166a;
     box-shadow: 3px 3px 15px var(--corfont);
 }
 form h3 {
     color: var(--corfont);
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
 }
 input {
@@ -94,7 +103,7 @@ label {
     margin-left: 2px;
     font-weight: 300;
 }
-/* CARDS */
+/* MENU */
 .card img {
     width: 100%;
     height: 220px;
@@ -105,17 +114,17 @@ label {
     display: inline-block;
     background-color: var(--corsecundaria);
     color: var(--corprimaria);
-    border: 1px solid var(--corfont);
     border-radius: 10px;
     padding: 15px;
     width: calc(35.50% - 35px);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px;  /* Ajuste da margem inferior */
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
 .cards {
-    margin: 15px 0;
+    width: 100%;
+    margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -137,6 +146,77 @@ label {
 .card button {
     width: 100px;
     height: 40px;
+}
+/* PEDIDOS */
+#action .card {
+    background: #b92616d2; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px var(--corfont); 
+    width: 280px; 
+    text-align: center; 
+}
+.status {
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    color: var(--corprimaria); 
+    margin: 10px 0; 
+    display: inline-block; 
+}
+.preparando {
+    background-color: #ffa500; 
+} /* Laranja */
+.a-caminho {
+    background-color: #007bff; 
+} /* Azul */
+.entregue {
+    background-color: var(--cordestaque); 
+}/* Verde */
+.cancelar {
+    background-color: #B92616; 
+    color: var(--corprimaria); 
+    font-size: 20px;
+    border: 1px solid var(--corfont);
+    padding: 5px 10px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+.cancelar:hover {
+    background-color: var(--corsecundaria); 
+}
+/* VENDAS */
+#vision, 
+#action,
+#menu,
+#new{ 
+    max-width: 90%; 
+    margin: 30px 0; 
+    background: var(--corprimaria); 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 1px 1px 10px var(--corfont);
+}
+table { 
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td { 
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 1px solid var(--cordestaque); 
+}
+th { 
+    background-color: var(--cordestaque); 
+    color: var(--corprimaria); 
+}
+tr:hover { 
+    background-color: #4caf4f53; 
+}
+.total { 
+    font-weight: bold; 
+    color: var(--cordestaque); 
 }
  /* BOTÃO */
 .botoes {
@@ -191,7 +271,7 @@ li :hover {
         width: calc(50% - 20px);
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 550px) {
     form {
         margin: 20px 0;
     }
@@ -203,5 +283,16 @@ li :hover {
     }
     .card {
         width: 100%;
+    }
+    .botoes {
+        margin: 0;
+        gap: 10px;
+    }
+    button {
+        width: 40%;
+        margin-top: 30px;
+        height: 45px;
+        font-size: 15px;
+        color: var(--corprimaria);
     }
 }
