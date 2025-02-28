@@ -276,6 +276,9 @@ li :hover {
     }
 }
 @media (max-width: 550px) {
+    h1 {
+        font-size: 25px;
+    }
     form {
         margin: 20px 0;
     }
