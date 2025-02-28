@@ -2,7 +2,7 @@
 * {
    margin: 0;
    padding: 0;
-   border: 2px solid red
+
 }
 :root {
    --corprimaria : #F2F2F2;
@@ -51,7 +51,7 @@ header .logo {
 .home-icon:hover{
    font-size: 42px;
 }
- 
+
 /* CONTAINER DO TITULO*/
 .containerTitulo {
    display: flex;
@@ -66,7 +66,7 @@ header .logo {
    text-align: left;
    display: flex;
    justify-content: flex-start;
-   align-items: center; /* Alinha o título verticalmente com as bolinhas */
+   align-items: center;
    flex: 1;
    font-size: 24px;
    color: var(--corsecundaria)
@@ -76,9 +76,9 @@ header .logo {
 }
 .linhaProgresso {
    display: flex;
-   align-items: center;  /* Alinha as bolinhas verticalmente */
+   align-items: center;  
    gap: 25px;
-   margin-left: 20px;  /* Espaço entre o título e as bolinhas */
+   margin-left: 20px; 
 }
 .progress-bar-bolinhas {
    list-style: none;
@@ -92,7 +92,7 @@ header .logo {
    height: 50px;
    border-radius: 50%;
    background-color: white;
-   border: 2px solid red; /* Borda vermelha por padrão */
+   border: 2px solid red;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -100,15 +100,15 @@ header .logo {
    font-weight: bold;
 }
 .bolinha.completo {
-   background-color: #367A1C; /* Cor de fundo verde quando completo */
-   border: 2px solid #367A1C; /* Borda verde */
-   color: white; /* Texto branco dentro da bolinha */
+   background-color: #367A1C; 
+   border: 2px solid #367A1C; 
+   color: white;
 }
 
 /* BARRA DE INFO */
 .info {
    display: flex;
-   justify-content: space-between; /* Espaça os itens igualmente entre os extremos */
+   justify-content: space-between; 
    align-items: center;
    padding: 15px;
    grid-column: 2 / 12;
@@ -118,29 +118,129 @@ header .logo {
    width: 100%;
    box-sizing: border-box;
 }
-
 .textProduto {
    text-align: left;
    flex: 1;
    font-size: 15px;
    color: var(--corprimaria);
 }
-
 .textQuanti, .textValor {
    text-align: right;
    font-size: 15px;
    color: var(--corprimaria);
 }
-
 .textQuanti {
-   margin-right: 23%; /* Ajusta o espaçamento da quantidade */
+   margin-right: 23%;
 }
 
-/* Media query para telas pequenas (até 390px de largura) */
-@media screen and (max-width: 390px) {
-   
+/* EXIBINDO PRODUTOS*/
+.carrinho {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px;
+   grid-column: 2 / 12;
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
 }
-
+.selecao {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   margin: 5px 0;
+   cursor: pointer;
+}
+.product-card {
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   text-align: left;
+   flex: 1;
+   font-size: 15px;
+}
+.product-card img {
+   width: 120px;
+   height: auto;
+   border-radius: 10px;
+   margin-right: 20px;
+}
+.product-info {
+   flex-grow: 1;
+}
+.quantity-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-right: 24.5%;
+}
+.quantity-box {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px;
+}
+.quantity-box button {
+   background:var(--cordestaque);
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 5px;
+}
+.quantity-box span {
+   margin: 0 10px;
+   font-size: 18px;
+   width: 30px;
+   display: inline-block;
+   text-align: center;
+}
+.remove-btn {
+   background: red;
+   color: white;
+   border: none;
+   padding: 8px;
+   cursor: pointer;
+   border-radius: 5px;
+   width: 100px;
+}
+.price {
+   font-size: 18px;
+   font-weight: bold;
+}
+.barraTotal {
+   display: flex;
+   justify-content: space-between;
+   padding: 15px;
+   grid-column: 2 / 12;
+   height: 50px;
+   position: relative;
+   border-top: 5px solid var(--corsecundaria);
+   width: 100%;
+   box-sizing: border-box;
+}
+.textTotal {
+   font-size: 15px;
+   color: var(--cordestaque);
+   margin-left: auto;
+}
+.barraPrecoTotal{
+   display: flex;
+   justify-content: space-between;
+   padding: 15px;
+   grid-column: 2 / 12;
+   height: 50px;
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
+}
+.precoTotal{
+   font-size: 10px;
+   color: var(--cordestaque);
+   margin-left: auto;
+}
 /* FOOTER */
 footer {
    background-color: var(--corsecundaria);
@@ -167,6 +267,7 @@ footer ul {
 
 /* RESPONSIVO */
 @media screen and (max-width: 390px) {
+   /* HEADER*/
    header {
       flex-direction: row;
       justify-content: center;
@@ -179,34 +280,35 @@ footer ul {
    .home-icon{
       font-size: 24px;
    }
+
+   /* CONTAINER DO TITULO*/
    .containerTitulo {
       flex-direction: column;
       height: auto;
       padding: 15px;
    }
    .titulo {
-      font-size: 15px; /* Aumenta o tamanho do título */
-      text-align: center; /* Centraliza o título */
-      margin-bottom: 10px; /* Aumenta o espaçamento entre título e bolinhas */
+      font-size: 15px; 
+      text-align: center;
+      margin-bottom: 10px; 
    }
-
    .linhaProgresso {
-      gap: 10px; /* Ajusta o espaço entre as bolinhas */
-      justify-content: center; /* Centraliza as bolinhas */
+      gap: 10px; 
+      justify-content: center; 
       flex-wrap: wrap;
       margin-top: 0;
    }
    .progress-bar-bolinhas {
-      gap: 15px; /* Ajusta o espaço entre as bolinhas */
+      gap: 15px; 
       left:30px;
    }
    .bolinha {
-      width: 10px; /* Tamanho bem pequeno das bolinhas */
-      height: 10px; /* Tamanho bem pequeno das bolinhas */
-      font-size: 5px; /* Reduz o tamanho do texto */
-      color: transparent; /* Remove o texto */
-      background-color: transparent; /* Deixa o fundo transparente */
-      margin-bottom: 5px; /* Ajuste o espaçamento vertical */
+      width: 10px; 
+      height: 10px; 
+      font-size: 5px; 
+      color: transparent;
+      background-color: transparent; 
+      margin-bottom: 5px; 
    }
    .bolinha.completo {
       background-color: #367A1C;
@@ -216,66 +318,147 @@ footer ul {
    .textProgresso {
       font-size: 20px;
    }
-   .info {
-      padding: 10px; /* Ajusta o padding para telas menores */
-      height: auto; /* Deixa a altura adaptável */
-      flex-direction: row; /* Mantém os itens lado a lado */
-      overflow: hidden; /* Garante que o conteúdo não ultrapasse o limite */
-      flex-wrap: wrap; /* Permite que os itens se reorganizem se necessário */
-   }
 
+   /* BARRA DE INFO*/
+   .info {
+      padding: 10px; 
+      height: auto; 
+      flex-direction: row; 
+      overflow: hidden;
+      flex-wrap: wrap; 
+   }
    .textProduto {
       text-align: left;
-      font-size: 8px; /* Ajusta o tamanho da fonte para telas pequenas */
-      margin-bottom: 0; /* Remove a margem inferior */
-      flex: 0; /* Deixa o produto ocupar todo o espaço disponível */
-      margin-right: 10px; /* Adiciona um pequeno espaço entre os itens */
+      font-size: 8px; 
+      margin-bottom: 0; 
+      flex: 0; 
+      margin-right: 10px;
    }
-
    .textQuanti, .textValor {
-      text-align: right; /* Mantém o alinhamento à direita */
-      font-size: 8px; /* Ajusta o tamanho da fonte */
-      margin-right: 10px; /* Ajusta o espaço entre a quantidade e o valor */
+      text-align: right; 
+      font-size: 8px; 
+      margin-right: 10px; 
    }
-
    .textQuanti {
-      margin-right: 15px; /* Ajusta o espaço entre quantidade e valor */
+      margin-right: 15px;
+   }
+   .textValor {
+      margin-left: 10px; 
    }
 
-   .textValor {
-      margin-left: 10px; /* Garante um pequeno espaçamento à esquerda */
+   /* EXIBINDO PRODUTOS*/
+   .carrinho {
+      flex-direction: column;
+      align-items: flex-start; 
+      border:1px solid #ccc
+   }
+   .product-card {
+      width: 100%; 
+      padding: 10px; 
+      flex-direction: column; 
+      align-items: center;
+   }
+   .product-card img {
+      width: 80px; 
+      margin-right: 0; 
+      margin-bottom: 10px; 
+   }
+   .quantity-container {
+      margin-right: 0; 
+      width: 100%;
+   }
+   .barraTotal, .barraPrecoTotal {
+      flex-direction: column; 
+      align-items: center; 
+      height: auto; 
+      width: 100%;
+   }
+   .textTotal, .precoTotal {
+      font-size: 12px;
+   }
+   .remove-btn {
+      width: auto; 
+      margin-top: 10px;
    }
 }
-
+@media screen and (max-width: 870px){
+   /* EXIBINDO PRODUTOS*/
+   .carrinho {
+      flex-direction: column;
+      align-items: flex-start; 
+      border:1px solid #ccc;
+   }
+   .product-card {
+      width: 100%; 
+      padding: 10px; 
+      flex-direction: column; 
+      align-items: center;
+   }
+   .product-card img {
+      width: 200px; 
+      margin-right: 0; 
+      margin-bottom: 10px;
+   }
+   .product-info {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center;
+   }
+   .product-info h2, .product-info p {
+      margin: 0; 
+      padding: 0; 
+   }
+   .quantity-container {
+      margin-right: 0;
+      width: 100%; 
+   }
+   .barraTotal, .barraPrecoTotal {
+      flex-direction: column; 
+      align-items: center; 
+      height: auto; 
+      width: 100%;
+   }
+   .textTotal{
+      font-size: 15px;
+   }
+   .precoTotal {
+      font-size: 10px;
+   }
+   .remove-btn {
+      width: auto; /* Deixa o botão "remover" com largura automática */
+      margin-top: 10px; /* Adiciona margem superior para espaçar os botões */
+   }
+}
 @media screen and (max-width: 1000px) {
+   /* CONTAINER DO TITULO*/
    .containerTitulo {
       flex-direction: column;
       height: auto;
       padding: 20px;
    }
    .titulo {
-      font-size: 30px; /* Aumenta o tamanho do título */
-      text-align: center; /* Centraliza o título */
-      margin-bottom: 20px; /* Aumenta o espaçamento entre título e bolinhas */
+      font-size: 30px; 
+      text-align: center;
+      margin-bottom: 20px;
    }
-
    .linhaProgresso {
-      gap: 10px; /* Ajusta o espaço entre as bolinhas */
-      justify-content: center; /* Centraliza as bolinhas */
+      gap: 10px; 
+      justify-content: center; 
       flex-wrap: wrap;
       margin-top: 0;
    }
    .progress-bar-bolinhas {
-      gap: 15px; /* Ajusta o espaço entre as bolinhas */
+      gap: 15px; 
       left:30px;
    }
    .bolinha {
-      width: 15px; /* Tamanho bem pequeno das bolinhas */
-      height: 15px; /* Tamanho bem pequeno das bolinhas */
-      font-size: 5px; /* Reduz o tamanho do texto */
-      color: transparent; /* Remove o texto */
-      background-color: transparent; /* Deixa o fundo transparente */
-      margin-bottom: 5px; /* Ajuste o espaçamento vertical */
+      width: 15px; 
+      height: 15px; 
+      font-size: 5px; 
+      color: transparent; 
+      background-color: transparent; 
+      margin-bottom: 5px; 
    }
    .bolinha.completo {
       background-color: #367A1C;
@@ -284,5 +467,32 @@ footer ul {
    }
    .textProgresso {
       font-size: 20px;
+   }
+
+   /* BARRA DE INFO*/
+   .info {
+      padding: 10px; 
+      height: auto; 
+      flex-direction: row; 
+      overflow: hidden;
+      flex-wrap: wrap;
+   }
+   .textProduto {
+      text-align: left;
+      font-size: 8px; 
+      margin-bottom: 0; 
+      flex: 0; 
+      margin-right: 10px; 
+   }
+   .textQuanti, .textValor {
+      text-align: right; 
+      font-size: 8px; 
+      margin-right: 10px;
+   }
+   .textQuanti {
+      margin-right: 15px;
+   }
+   .textValor {
+      margin-left: 10px;
    }
 }
