@@ -2,7 +2,7 @@
 * {
    margin: 0;
    padding: 0;
-
+   border: 1px solid red;
 }
 :root {
    --corprimaria : #F2F2F2;
@@ -91,18 +91,19 @@ header .logo {
    width: 50px;
    height: 50px;
    border-radius: 50%;
-   background-color: white;
-   border: 2px solid red;
+   background-color: var(--corprimaria);
+   border: 2px solid var(--corsecundaria);
    display: flex;
    justify-content: center;
    align-items: center;
-   color: red;
+   color: var(--corsecundaria);
    font-weight: bold;
 }
 .bolinha.completo {
-   background-color: #367A1C; 
-   border: 2px solid #367A1C; 
-   color: white;
+   background-color: var(--cordestaque); 
+   border: 2px solid var(--cordestaque); 
+   color: var(--corprimaria);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* BARRA DE INFO */
@@ -149,7 +150,7 @@ header .logo {
    align-items: center;
    padding: 10px;
    border: 2px solid #ccc;
-   border-radius: 5px;
+   border-radius: 10px;
    margin: 5px 0;
    cursor: pointer;
 }
@@ -183,12 +184,13 @@ header .logo {
 }
 .quantity-box button {
    background:var(--cordestaque);
-   color: white;
+   color:var(--corprimaria);
    border: none;
    padding: 5px 10px;
    cursor: pointer;
    font-size: 16px;
    border-radius: 5px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .quantity-box span {
    margin: 0 10px;
@@ -198,18 +200,21 @@ header .logo {
    text-align: center;
 }
 .remove-btn {
-   background: red;
-   color: white;
+   background:var(--corsecundaria);
+   color: var(--corprimaria);
    border: none;
    padding: 8px;
    cursor: pointer;
    border-radius: 5px;
    width: 100px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .price {
    font-size: 18px;
    font-weight: bold;
 }
+
+/* VALOR TOTAL*/
 .barraTotal {
    display: flex;
    justify-content: space-between;
@@ -271,7 +276,7 @@ header .logo {
 }
 .finalizar-btn {
    background-color: var(--cordestaque);
-   color: white;
+   color: var(--corprimaria);
    grid-column: 3;
    text-align: center;
    text-decoration: none;
@@ -481,23 +486,23 @@ footer ul {
       font-size: 10px;
    }
    .remove-btn {
-      width: auto; /* Deixa o botão "remover" com largura automática */
-      margin-top: 10px; /* Adiciona margem superior para espaçar os botões */
+      width: auto; 
+      margin-top: 10px; 
    }
    /*BOTOES DE FINALIZAR*/
    .botao-container {
       display: flex;
-      flex-direction: column; /* Alinha os botões verticalmente */
-      justify-content: space-between; /* Adiciona espaçamento entre os botões */
-      height: auto; /* Ajusta a altura para caber o conteúdo */
+      flex-direction: column; 
+      justify-content: space-between; 
+      height: auto; 
    }
    .continuar-btn, .finalizar-btn {
-      width: 100%; /* Garante que os botões tenham 100% de largura */
-      margin-bottom: 10px; /* Adiciona espaçamento entre os botões */
+      width: 100%; 
+      margin-bottom: 10px; 
    }
    .finalizar-btn {
-      margin-bottom: 0; /* Remove a margem inferior do botão "Finalizar Compra" */
-      order: -1; /* Coloca o botão "Finalizar Compra" em cima */
+      margin-bottom: 0; 
+      order: -1; 
    }
 }
 @media screen and (max-width: 1000px) {
