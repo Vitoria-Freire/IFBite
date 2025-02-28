@@ -1,4 +1,4 @@
-/* ESTILOS GERAIS */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,6 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* HEADER */
 header {
     width: 100%;
     background-color: var(--corsecundaria);
@@ -37,7 +36,7 @@ header {
 }
 
 header img {
-    height: 60px;
+    height: 100px;
 }
 
 nav ul {
@@ -61,7 +60,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* HERO */
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -97,7 +95,6 @@ nav ul li a:hover {
     }
 }
 
-/* FILTROS */
 .filtros {
     display: flex;
     justify-content: center;
@@ -112,7 +109,6 @@ nav ul li a:hover {
     padding: 5px;
 }
 
-/* SEÇÃO RESTAURANTES */
 .restaurantes {
     width: 90%;
     max-width: 1200px;
@@ -146,7 +142,6 @@ nav ul li a:hover {
     border-radius: 50%;
 }
 
-/* FOOTER */
 footer {
     width: 100%;
     background-color: var(--corsecundaria);
@@ -175,13 +170,11 @@ footer ul {
     justify-content: center;
 }
 
-/* LINKS DE NAVEGAÇÃO */
 nav ul li a[href="#restaurantes"],
 nav ul li a[href="#footer"] {
     scroll-behavior: smooth;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .restaurantes-container {
         grid-template-columns: repeat(4, 1fr);
