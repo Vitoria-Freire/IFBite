@@ -2,7 +2,6 @@
 * {
    margin: 0;
    padding: 0;
-   border: 1px solid red;
 }
 :root {
    --corprimaria : #F2F2F2;
@@ -31,7 +30,7 @@ header {
    position: relative;
 }
 .logo {
-   max-width: 150px;
+   max-width: 130px;
 }
 header .logo {
    position: absolute;
@@ -78,7 +77,6 @@ header .logo {
    display: flex;
    align-items: center;  
    gap: 25px;
-   margin-left: 20px; 
 }
 .progress-bar-bolinhas {
    list-style: none;
@@ -217,26 +215,23 @@ header .logo {
 /* VALOR TOTAL*/
 .barraTotal {
    display: flex;
-   justify-content: space-between;
-   padding: 15px;
+   padding: 5px;
    grid-column: 2 / 12;
-   height: 50px;
    position: relative;
-   border-top: 5px solid var(--corsecundaria);
+   border-top: 2px solid var(--corsecundaria);
    width: 100%;
    box-sizing: border-box;
+   
 }
-.textTotal {
+.textTotal{
    font-size: 15px;
    color: var(--cordestaque);
    margin-left: auto;
 }
 .barraPrecoTotal{
    display: flex;
-   justify-content: space-between;
-   padding: 15px;
+   padding: 5px;
    grid-column: 2 / 12;
-   height: 50px;
    position: relative;
    width: 100%;
    box-sizing: border-box;
@@ -245,6 +240,26 @@ header .logo {
    font-size: 10px;
    color: var(--corfont);
    margin-left: auto;
+}
+.valorContainer {
+   display: flex;
+   flex-direction: column;  /* Alinha subtotal e frete em coluna */
+   width: 60%;  /* Reduz a largura para 60% da largura da barra total */
+   gap: 5px;  /* Espaçamento entre subtotal e frete */
+   padding-left: 70%; /* Adiciona um pequeno espaço à esquerda */
+   justify-content: space-between 
+}
+.subtotal, .frete {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;  /* Faz com que cada item ocupe toda a largura disponível dentro do valorContainer */
+   align-items: center; /* Alinha os itens de forma centralizada */
+   margin-right: 15px
+}
+.subtotal span, .frete span {
+   font-size: 20px;
+   color: var(--cordestaque); /* Cor para o texto */
+   font-weight: bold;
 }
 
 /*BOTOES DE FINALIZAR*/
@@ -370,26 +385,20 @@ footer ul {
       flex-direction: row; 
       overflow: hidden;
       flex-wrap: wrap; 
+      align-items: center;
+      justify-content: center;
    }
    .textProduto {
-      text-align: left;
+      text-align: center;
       font-size: 8px; 
-      margin-bottom: 0; 
-      flex: 0; 
-      margin-right: 10px;
+      margin-bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
    }
    .textQuanti, .textValor {
-      text-align: right; 
-      font-size: 8px; 
-      margin-right: 10px; 
+      display: none;
    }
-   .textQuanti {
-      margin-right: 15px;
-   }
-   .textValor {
-      margin-left: 10px; 
-   }
-
    /* EXIBINDO PRODUTOS*/
    .carrinho {
       flex-direction: column;
@@ -439,7 +448,23 @@ footer ul {
       margin-bottom: 0; 
       order: -1;
    }
-
+   .valorContainer {
+      width: 100%; 
+      padding-left: 0; 
+      justify-content: space-between;
+   }
+   .subtotal, .frete {
+      margin-right: 15px; 
+   }
+   .subtotal span, .frete span {
+      font-size: 16px; 
+      font-weight: normal;
+      font-weight: bold;
+   }
+   .valorSubtotal, .valorFrete {
+      font-size: 18px; 
+      font-weight: bold;
+   }
 }
 @media screen and (max-width: 870px){
    /* EXIBINDO PRODUTOS*/
@@ -450,7 +475,7 @@ footer ul {
    }
    .product-card {
       width: 100%; 
-      padding: 10px; 
+      padding: 5px; 
       flex-direction: column; 
       align-items: center;
    }
@@ -551,23 +576,35 @@ footer ul {
       flex-direction: row; 
       overflow: hidden;
       flex-wrap: wrap;
+      justify-content: center;
    }
    .textProduto {
       text-align: left;
-      font-size: 8px; 
+      font-size: 15px; 
       margin-bottom: 0; 
-      flex: 0; 
-      margin-right: 10px; 
+      flex: 0;
    }
    .textQuanti, .textValor {
-      text-align: right; 
-      font-size: 8px; 
-      margin-right: 10px;
+     display: none;
    }
-   .textQuanti {
-      margin-right: 15px;
+   .valorContainer {
+      width: 100%; 
+      padding-left: 0; 
+      justify-content: space-between;
    }
-   .textValor {
-      margin-left: 10px;
+
+   .subtotal, .frete {
+      margin-right: 15px; 
+   }
+
+   .subtotal span, .frete span {
+      font-size: 16px; 
+      font-weight: normal;
+      font-weight: bold;
+   }
+
+   .valorSubtotal, .valorFrete {
+      font-size: 18px; 
+      font-weight: bold;
    }
 }
