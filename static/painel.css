@@ -147,6 +147,44 @@ label {
     width: 100px;
     height: 40px;
 }
+/* PEDIDOS */
+#action .card {
+    background: #b92616d2; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px var(--corfont); 
+    width: 280px; 
+    text-align: center; 
+}
+.status {
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    color: var(--corprimaria); 
+    margin: 10px 0; 
+    display: inline-block; 
+}
+.preparando {
+    background-color: #ffa500; 
+} /* Laranja */
+.a-caminho {
+    background-color: #007bff; 
+} /* Azul */
+.entregue {
+    background-color: var(--cordestaque); 
+}/* Verde */
+.cancelar {
+    background-color: #B92616; 
+    color: var(--corprimaria); 
+    font-size: 20px;
+    border: 1px solid var(--corfont);
+    padding: 5px 10px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+.cancelar:hover {
+    background-color: var(--corsecundaria); 
+}
 /* VENDAS */
 #vision, 
 #action,
