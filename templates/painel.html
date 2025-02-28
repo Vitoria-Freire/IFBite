@@ -36,141 +36,164 @@
     </header>
     <main>
         <section class="oi" id="new">
-            <h1>🍔 Novo no Cardápio</h1>
             <form action="" method="get">
-                <h3>Adicionar Novo Produto</h3>
+                <h1><i class="fas fa-utensils"></i> Adicionar Novo Produto</h1>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome">
+                <input type="text" id="nome" placeholder="Ex: Brigadeiro de Café" required>
                 <label for="descricao">Descrição:</label>
-                <input type="text" name="descricao" id="desc">
+                <input type="text" id="descricao" placeholder="Ex: Brigadeiro com massa de café." required>
                 <label for="preco">Preço:</label>
-                <input type="number" step="0.01" min="0" placeholder="R$ 0,00">
+                <input type="number" step="0.01" min="0" placeholder="Ex: 3.00" required>
                 <label for="time">Tempo:</label>
                 <input type="time" name="time">
                 <label for="categoria">Categoria:</label>
-                <input list="categoria" name="categoria" id="cate">
-                <datalist id="categoria">
-                    <option value="Salgados">
-                    <option value="Doces">
-                    <option value="Bebidas">
-                    <option value="Gelados">
-                </datalist>
+                <select id="categoria" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Salgados">Salgados</option>
+                    <option value="Doces">Doces</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Gelados">Gelados</option>
+                </select>
                 <label for="img">Imagem:</label>
                 <input type="file" id="imagem" name="imagem" accept="image/*">
                 <section class="botoes">
-                    <button type="submit">Adicionar</button>
-                    <button type="reset">Cancelar</button>
+                    <button type="submit">ADICIONAR</button>
+                    <button type="reset">CANCELAR</button>
                 </section>
             </form>
         </section>
         <section id="menu">
-            <h1>📋 Ajuste seu Menu</h1>
+            <h1><i class="fa-solid fa-file-pen"></i> Ajuste seu Menu</h1>
             <section class="cards">
                 <div class="card">
                     <img src="/templates/img/painel/tradicional.jpg" alt="">
                     <h3>Tradicional</h3>
-                    <p>Descrição: Brigadeiro com massa de chocolate 70% cacau</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de chocolate 70% cacau</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
                 <div class="card">
                     <img src="/templates/img/painel/ninho+nutela.jpg" alt="">
                     <h3>Ninho com Nutela</h3>
-                    <p>Descrição: Brigadeiro com massa de ninho e recheio de nutela</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de ninho e recheio de nutela</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
                 <div class="card">
                     <img src="/templates/img/painel/oreo.jpg" alt="">
                     <h3>Oreo</h3>
-                    <p>Descrição: Brigadeiro com massa de Oreo com um biscoito em cima</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de Oreo com um biscoito em cima</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
                 <div class="card">
                     <img src="/templates/img/painel/nesquik.jpg" alt="">
                     <h3>Nesquik</h3>
-                    <p>Descrição: Brigadeiro com massa de nesquik sabor morango</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de nesquik sabor morango</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
                 <div class="card">
                     <img src="/templates/img/painel/amendoim.jpg" alt="">
-                    <h3>Amendoim</h3>
-                    <p>Descrição: Brigadeiro com massa de chocolate com amendoim e nutela</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <h3>Ferrero</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de chocolate com amendoim e nutela</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
                 <div class="card">
                     <img src="/templates/img/painel/churros.jpg" alt="">
                     <h3>Churros</h3>
-                    <p>Descrição: Brigadeiro com massa de churros e recheio de doce de leite</p>
-                    <p>Preço: R$2,00</p>
-                    <p>Tempo de Entrega: 10min</p>
-                    <p>Categoria: Doces</p>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de churros e recheio de doce de leite</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
                     <section class="botoes">
-                        <button type="submit">Editar</button>
-                        <button disabled="disabled">Excluir</button>
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
                     </section>
                 </div>
             </section>
         </section>
         <section id="action">
-            <h1>🛒 Pedidos em Ação</h1>
-            <section class="cards">
-                <div class="card">
-                    <h3>Pedido #001</h3>
+            <h1><i class="fa-solid fa-cart-shopping"></i> Pedidos em Ação</h1>
+            <section class="cards1">
+                <div class="card1">
+                    <h3>Pedido #150</h3>
                     <p>Cliente: João Vitor</p>
+                    <p>Entregador: Rafael</p>
+                    <span class="status preparando">Preparando</span>
+                    <br>
+                    <button class="cancelar">CANCELAR</button>
+                </div>
+                <div class="card1">
+                    <h3>Pedido #151</h3>
+                    <p>Cliente: Maria Vitória</p>
+                    <p>Entregador: Lázaro</p>
+                    <span class="status acaminho">A caminho</span>
+                    <br>
+                    <button class="cancelar">CANCELAR</button>
+                </div>
+                <div class="card1">
+                    <h3>Pedido #153</h3>
+                    <p>Cliente: Ornã</p>
+                    <p>Entregador: Thales</p>
+                    <span class="status entregue">Entregue</span>
+                    <br>
+                    <button class="cancelar" disabled>CANCELAR</button>
+                </div>
+                <!-- <div class="card">
+                    <h3>Pedido #154</h3>
+                    <p>Cliente: Nick</p>
                     <p>Entregador: Rafael</p>
                     <span class="status preparando">Preparando</span>
                     <br>
                     <button class="cancelar">Cancelar</button>
                 </div>
                 <div class="card">
-                    <h3>Pedido #002</h3>
-                    <p>Cliente: Maria Vitória</p>
+                    <h3>Pedido #155</h3>
+                    <p>Cliente: João Paulo</p>
                     <p>Entregador: Thales</p>
                     <span class="status acaminho">A caminho</span>
                     <br>
                     <button class="cancelar">Cancelar</button>
                 </div>
                 <div class="card">
-                    <h3>Pedido #003</h3>
-                    <p>Cliente: Ornã</p>
+                    <h3>Pedido #156</h3>
+                    <p>Cliente: Bruna Rafaela</p>
                     <p>Entregador: Lázaro</p>
-                    <span class="status entregue">Entregue</span>
+                    <span class="status acaminho">A caminho</span>
                     <br>
                     <button class="cancelar" disabled>Cancelar</button>
-                </div>
+                </div> -->
             </section>
         </section>
         <section id="vision">
-            <h1>📊 Relatório de Vendas</h1>
+            <h1><i class="fa-solid fa-square-poll-vertical"></i> Relatório de Vendas</h1>
             <table>
                 <tr>
                     <th>Produto</th>
