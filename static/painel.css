@@ -7,7 +7,6 @@
 :root {
     --corprimaria : #F2F2F2;
     --corsecundaria: #B92616;
-    /* --cordestaque:#6BA156; */
     --cordestaque:#47a04a;
     --corfont: #2D2D31;
 }
@@ -60,21 +59,15 @@ main {
     margin: 10px 0;
 }
 /* NOVOS PRODUTOS */
-#new{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 h1 {
     font-size: 30px;
 }
 form {
     border-radius: 10px;
-    width: 90%;
+    width: 92%;
     padding: 20px;
     margin: 30px 0;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     color: var(--corfont);
     box-shadow: 3px 3px 15px var(--corfont);
@@ -149,14 +142,15 @@ label {
     font-size: 16px;
     margin-top: 10px;
 }
+:disabled {
+    background-color: #e75848;
+}
 /* PEDIDOS */
 #action .card1 {
-    /* background: var(--corsecundaria);  */
     padding: 10px; 
     margin: 10px 0;
     border-radius: 10px; 
     box-shadow: 0 0 10px var(--corfont); 
-    /* text-align: center;  */
 }
 .status {
     padding: 5px 10px; 
@@ -188,8 +182,14 @@ label {
 .cancelar:hover {
     background-color: var(--corsecundaria); 
 }
+.cards h3 {
+    margin: 5px;
+    border-bottom: 1px solid var(--cordestaque);
+}
+.cards1 p {
+    margin: 10px;
+}
 /* VENDAS */
-
 #action,
 #menu,
 #vision{ 
@@ -198,6 +198,7 @@ label {
     background: var(--corprimaria); 
     padding: 30px; 
     border-radius: 10px; 
+    margin-top: 20px;
     box-shadow: 1px 1px 10px var(--corfont);
 }
 table { 
@@ -239,7 +240,6 @@ button {
     font-weight: 600;
     color: var(--corprimaria);
     transition: transform 0.3s;
-    /* border: 0.1px solid var(--corprimaria); */
 }
 button:hover {
     transform: scale(1.02);
@@ -301,20 +301,6 @@ li:hover {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
-    .botoes {
-        margin: 0;
-        gap: 10px;
-    }
-    button {
-        width: 40%;
-        margin-top: 30px;
-        height: 45px;
-        font-size: 15px;
-        color: var(--corprimaria);
-    }
-    #menu button {
-        font-size: 20px;
-    }
     #new, 
     #action,
     #menu{ 
@@ -324,7 +310,6 @@ li:hover {
         padding: 0; 
         border-radius: 0; 
         box-shadow: 0 0 0 var(--corfont);
-        text-align: center;
     }
     #vision{ 
         max-width: 100%; 
@@ -334,5 +319,10 @@ li:hover {
         border-radius: 10px; 
         box-shadow: 1px 2px 10px var(--corfont);
         text-align: center;
+    }
+    th, td { 
+        padding: 5px; 
+        text-align: center; 
+        border-bottom: 1px solid var(--cordestaque); 
     }
 }
