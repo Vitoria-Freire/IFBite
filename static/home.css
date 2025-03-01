@@ -49,7 +49,6 @@ header {
     margin-left: 20px;
 }
 
-
 .header-content{
     display: flex;
     align-items: center;
@@ -160,6 +159,7 @@ header {
     width: 20%;
     transition: transform 0.3s ease;
 }
+
 .categorias img:hover{
     transform: scale(1.2);
 }
@@ -250,55 +250,30 @@ footer ul {
 }
 
 
+/* RESPONSIVIDADE */
+@media screen and (max-width: 480px){
+    body{
+        object-fit: cover;
+    }
 
-@media (orientation: landscape) {
-    .cards-container {
-        flex-direction: row;
+    header{
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        height: 70px;
+        
     }
 
-    .cards-container .card {
-        width: 30%;
-        margin: 10px;
-    }
-
-    .restaurantes-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .restaurantes-container .card {
-        width: 30%;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .header-content {
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
+    .header-content button{
+        margin-right: 10px;
     }
 
     .logo img {
-        height: 90px;
-        margin-bottom: 10px;
+        height: 40px;
     }
 
-    .busca input {
-        width: 80%;
-        margin-bottom: 10px;
-        margin-right: 5px;
+    .header-content input {
+        display: none;
     }
 
     .login button {
@@ -306,16 +281,64 @@ footer ul {
         margin-bottom: 12px;
         margin-right: 20px;
     }
-    .carrossel-container {
-        margin-top: 60px;
+
+
+    .hero img{
+        height: 350px;
+        margin-top: 35%;
+        margin-bottom: 50%;
     }
-    .carrossel img {
-        height: 250px;
+
+
+    .aboutUs{
+        flex-direction: column;
+        margin-left: 0%;
+    }
+    
+    .aboutUs img{
+        width: 95%;
+    }
+    
+    .aboutUsText{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .aboutUsText h1{
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    
+    .aboutUsText p{
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .categorias img{
+        width: 35vw;
+        height: 110px;
+    }
+    .restaurantes{
+        margin-top: 20px;
+    }
+    .categorias{
+        margin-top: 50px;
+    }
+    .restaurantes .card{
+        width: 90vw;
     }
 }
 
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .logo-section {
         padding: 10px;
     }
@@ -350,7 +373,7 @@ footer ul {
     }
 }
 
-
+*/
 /* KEY FRAMES*/
 @keyframes slide {
     0% {
@@ -368,4 +391,4 @@ footer ul {
     100% {
         transform: translateX(0);
     }
-}
+} 
