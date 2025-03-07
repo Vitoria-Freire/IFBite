@@ -34,6 +34,18 @@
                     <label for="telefone">Telefone:</label>
                     <input type="tel" name="telefone" required>
 
+                    <h2>Tipo de usuário</h2>
+                    <div class="tipo-usuario">
+                    <input type="radio" id="cliente" name="tipo_usuario" value="CLIENTE">
+                    <label for="cliente">Cliente</label>
+
+                    <input type="radio" id="entregador" name="tipo_usuario" value="ENTREGADOR">
+                    <label for="entregador">Entregador</label>
+
+                    <input type="radio" id="restaurante" name="tipo_usuario" value="RESTAURANTE">
+                    <label for="restaurante">Restaurante</label>
+                    </div>
+
                     <div id="enderecos">
                         <label for="endereco">Endereço/Localidade de entrega:</label>
                         <input type="text" name="endereco[]" required>

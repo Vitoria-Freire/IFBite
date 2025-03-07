@@ -58,6 +58,74 @@ body, html {
     right: 200px;
     z-index: 1;
 }
+
+/* Estilização do título */
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilização do container que envolve os botões de rádio */
+.tipo-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Para que os itens se ajustem em diferentes tamanhos de tela */
+}
+
+/* Estilo para os inputs de tipo rádio */
+input[type="radio"] {
+    display: none; /* Oculta os círculos dos botões de rádio */
+}
+
+/* Estilo para o label dos botões de rádio */
+label {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #555;
+    padding-left: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilizando a caixa do botão de rádio customizado */
+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para quando o radio estiver selecionado */
+input[type="radio"]:checked + label::before {
+    background-color: #007BFF;
+    border-color: #007BFF;
+}
+
+/* Efeito de hover nos labels */
+label:hover {
+    color: #007BFF;
+}
+
+/* Opacidade para quando o radio for selecionado */
+input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+
 .form {
     height: 80%;
     width: 680px;
