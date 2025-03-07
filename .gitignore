@@ -1,4 +1,4 @@
 .vscode/
 .idea/
-
-ifood.conf/*
+__pycache__/
+ifood.conf/
