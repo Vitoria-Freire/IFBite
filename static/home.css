@@ -80,6 +80,11 @@ header {
     font-weight: 900;
     font-size: 17px;
     margin-right: 20px;
+    transition: transform ease 0.3s;
+}
+
+.header-content button:hover{
+    transform: scale(1.1);
 }
 
 /* HERO */

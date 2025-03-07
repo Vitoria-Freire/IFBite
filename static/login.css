@@ -92,11 +92,11 @@ input {
     font-size: 16px;
 }
 input:focus {
-    border: 3px solid #968684;
+    border: 2px solid #3a3534;
     outline: none;
 }
  label {
-    font-size: 20px;
+    font-size: 17px;
     display: flex;
     align-items: flex-start;
     margin-top: 15px;
@@ -106,11 +106,13 @@ input:focus {
 button {
     background-color: var(--cordestaque);
     border-radius: 10px;
-    border: 1px solid var(--corfont);
-    width: 150px;
+    border: 0;
+    width: 94%;
     margin: 20px;
     margin-top: 30px;
     margin-bottom: 35px;
+    margin-right: 0;
+    margin-left: 0;
     height: 45px;
     font-size: 25px;
     color: var(--corprimaria);
@@ -119,6 +121,7 @@ button:hover {
     background-color: #2d5e18;
     color: var(--corprimaria);
 }
+
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .metade-esquerda {
@@ -184,6 +187,9 @@ button:hover {
         right: 50px;
     }
     input {
+        width: 100%;
+    }
+    button{
         width: 100%;
     }
 }
