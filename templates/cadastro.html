@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="/static/cadastro.css">    
+    <link rel="stylesheet" href="/static/login.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
- 
-    <title>Cadastro de Usuário</title>
+    <link rel="icon"  href="/templates/img/Logo.png">
+    <title>{IF}Bite</title>
 </head>
 <body>
-    <img src="/static/img/Logo.png" alt="Logo">
-    <section class="ma">    
-        <img src="/static/img/Logo.png" alt="Logo" class="oi">
+    <section class="principal">
+        <section class="metade-esquerda">
+            <img src="../static/img/logoBranca.png" alt="Logo" class="img1">
+        </section>
         <section class="forms">
             <section class="form">
-                <h1>Bateu a fome no IF?<br> Dá um IFBite!</h1>
-                <p>Cadastrar com:</p>
-                <form action="" method="post">
+                <h1>Informe os seus dados para cadastrar!</h1>
+
+                <form action="/templates/login.html" method="post">
                     <label for="email">E-mail:</label>
                     <input type="email" name="email" autofocus required>
 
@@ -44,4 +45,4 @@
         </section>
     </section>
 </body>
-</html>
+</html> 
