@@ -2,88 +2,398 @@
 * {
     margin: 0;
     padding: 0;
-
-    box-sizing: border-box;
 }
+
+
 :root {
     --corprimaria : #F2F2F2;
     --corsecundaria: #B92616;
     --cordestaque:#367A1C;
     --corfont: #2D2D31;
 }
-body, html {
+
+
+body{
+    /* FUNDO E FONTES */
     background-color: var(--corprimaria);
     font-family: 'Roboto';
-    /* display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-column: 1/-1; */
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    
+
+    /* HERO IMAGE BACKGROUND */
+    background-image: url(./img/home/fundoHome.png);
+    background-size: 100vw 100vh;
 }
+
+
 /* HEADER */
 header {
+    height: 100px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+
     background-color: var(--corprimaria);
-}
-.header-content {
-    display: flex;
-    justify-content: flex-end ;
-    width:  100%;
-    max-width:  1200px;
-    align-items: center;
-}
-.logo img {
-    height: 80px;
-    margin-right: 0;
-}
-.actions {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 0;
-}
-.lupa button,
-.login button {
-    background-color: transparent;
-    border: none;
-    color: var(--corprimaria);
-    font-size:  30px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-.lupa button {
-    font-size: 25px;
-}
-.login button {
-    background-color: var(--cordestaque) ;
-    color: white; 
-    border-radius: 5px;
-    padding: 8px 15px;
-    font-size: 16px;
+    border-bottom: 2px solid var(--corsecundaria);
 }
 
-/* SECTION */
-.logo-section {
-    background-color: var(--corsecundaria);
-    position: relative;
-    padding: 0;
+.logo img{
+    height: 60px;
+    margin-left: 20px;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+}
+
+.header-content input{
+    background-color: var(--corprimaria);
+    border: 1px solid var(--corsecundaria);
+    border-radius: 12px;
+    width: 300px;
+    height: 40px;
+    padding-left: 15px;
+    margin-right: 20px;
+}
+
+.header-content i{
+    font-size: 30px;
+    margin-right: 20px;
+    color: var(--corsecundaria);
+}
+
+.header-content button{
+    background-color: var(--cordestaque);
+    color: var(--corprimaria);
+    height: 40px;
+    width: 100px;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 17px;
+    margin-right: 20px;
+    transition: transform ease 0.3s;
+}
+
+.header-content button:hover{
+    transform: scale(1.1);
+}
+
+/* HERO */
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero img{
+    height: 80vh;
+}
+
+/* ABOUT US */
+.aboutUs{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.aboutUs img{
+    width: 65%;
+}
+
+.aboutUsText{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+}
+
+.aboutUsText h1{
+  font-size: 35px;
+  font-weight:  900;
+}
+
+.aboutUsText p{
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+/* SECTION CARROSSEL */
+.carrossel-container {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.carrossel {
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+.carrossel-item {
+    flex: 0 0 100%;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 100%;
+}
+
+/* CATEGORIAS */
+.categorias{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+
+.categorias img{
+    width: 20%;
+    transition: transform 0.3s ease;
+}
+
+.categorias img:hover{
+    transform: scale(1.2);
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title{
+    font-size: 35px;
+    font-weight: 900;
+    color: var(--corsecundaria);
+    padding: 20px;
+    width: 70vw;
     text-align: center;
-    overflow: hidden;
+    border-bottom: 5px solid var(--corsecundaria);
 }
-.logo-container img {
-    max-width: 800px;
+
+/* SECTION RESTAURANTS */
+.restaurantes{
+    margin-top: 100px;
     margin-bottom: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10%;
 }
-.onda img {
-    position: absolute;
-    bottom: 0;
+
+.restaurantes .card {
+    margin-top: 40px;
+    background-color: var(--corprimaria);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cordestaque);
+    width: 20%;
+}
+
+.restaurantes .card img {
     width: 100%;
     height: auto;
-    bottom: 0;
-    left: 1px;
+    border-radius: 8px;
 }
- 
-/* SECTION */
+
+.restaurantes .card h3 {
+    margin-top: 15px;
+    color: var(--corfont);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.restaurantes .card:hover {
+    transform: scale(1.05);  
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+}
 
 /* FOOTER */
+footer {
+    background-color: var(--corsecundaria);
+    grid-column: 1/-1;
+    color: var(--corprimaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+footer img {
+    width: 120px;
+    height: auto;
+}
+
+footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: center;
+}
+
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 480px){
+    body{
+        object-fit: cover;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        
+    }
+
+    .header-content button{
+        margin-right: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .header-content input {
+        display: none;
+    }
+
+    .login button {
+        width: 100%;
+        margin-bottom: 12px;
+        margin-right: 20px;
+    }
+
+
+    .hero img{
+        height: 350px;
+        margin-top: 35%;
+        margin-bottom: 50%;
+    }
+
+
+    .aboutUs{
+        flex-direction: column;
+        margin-left: 0%;
+    }
+    
+    .aboutUs img{
+        width: 95%;
+    }
+    
+    .aboutUsText{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .aboutUsText h1{
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    
+    .aboutUsText p{
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .categorias img{
+        width: 35vw;
+        height: 110px;
+    }
+    .restaurantes{
+        margin-top: 20px;
+    }
+    .categorias{
+        margin-top: 50px;
+    }
+    .restaurantes .card{
+        width: 90vw;
+    }
+}
+
+
+/* @media (max-width: 480px) {
+    .logo-section {
+        padding: 10px;
+    }
+
+    .logo-container img {
+        max-width:90%;
+        margin-bottom: 40px;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .onda img {
+        width: 120%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .carrossel img {
+        height: 390px;
+    }
+
+    .cards-container, .restaurantes-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .cards-container .card, .restaurantes-container .card {
+        width: 90%;
+    }
+}
+
+*/
+/* KEY FRAMES*/
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} 

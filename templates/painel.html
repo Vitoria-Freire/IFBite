@@ -9,10 +9,247 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
-
-    <title>Document</title>
+    <link rel="icon" href="/templates/img/Logo.png">
+    <title>Painel do restaurante</title>
 </head>
 <body>
-    
+    <header>
+        <img src="/templates/img/logoBranca.png" alt="">
+        <ul>
+            <a href="#new">
+                <i class="fa-solid fa-utensils"></i>
+                <li>Cadastrar</li>
+            </a>
+            <a href="#menu">
+                <i class="fa-solid fa-file-pen"></i>
+                <li>Editar</li>
+            </a>
+            <a href="#action">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <li>Em andamento</li>
+            </a>
+            <a href="#vision">
+                <i class="fa-solid fa-chart-line"></i>
+                <li>Vendas</li>
+            </a>
+        </ul>
+    </header>
+    <main>
+        <section class="oi" id="new">
+            <form action="" method="get">
+                <h1><i class="fas fa-utensils"></i> Adicionar Novo Produto</h1>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Ex: Brigadeiro de Café" required>
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" placeholder="Ex: Brigadeiro com massa de café." required>
+                <label for="preco">Preço:</label>
+                <input type="number" step="0.01" min="0" placeholder="Ex: 3.00" required>
+                <label for="time">Tempo:</label>
+                <input type="time" name="time">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Salgados">Salgados</option>
+                    <option value="Doces">Doces</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Gelados">Gelados</option>
+                </select>
+                <label for="img">Imagem:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*">
+                <section class="botoes">
+                    <button type="submit">ADICIONAR</button>
+                    <button type="reset" disabled="disabled">CANCELAR</button>
+                </section>
+            </form>
+        </section>
+        <section id="menu">
+            <h1><i class="fa-solid fa-file-pen"></i> Ajuste seu Menu</h1>
+            <section class="cards">
+                <div class="card">
+                    <img src="/templates/img/painel/tradicional.jpg" alt="">
+                    <h3>Tradicional</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de chocolate 70% cacau</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+                <div class="card">
+                    <img src="/templates/img/painel/ninho+nutela.jpg" alt="">
+                    <h3>Ninho com Nutela</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de ninho e recheio de nutela</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+                <div class="card">
+                    <img src="/templates/img/painel/oreo.jpg" alt="">
+                    <h3>Oreo</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de Oreo com um biscoito em cima</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+                <div class="card">
+                    <img src="/templates/img/painel/nesquik.jpg" alt="">
+                    <h3>Nesquik</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de nesquik sabor morango</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+                <div class="card">
+                    <img src="/templates/img/painel/amendoim.jpg" alt="">
+                    <h3>Ferrero</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de chocolate com amendoim e nutela</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+                <div class="card">
+                    <img src="/templates/img/painel/churros.jpg" alt="">
+                    <h3>Churros</h3>
+                    <p><strong>Descrição:</strong> Brigadeiro com massa de churros e recheio de doce de leite</p>
+                    <p><strong>Preço:</strong> R$2,00</p>
+                    <p><strong>Tempo de Entrega:</strong> 10min</p>
+                    <p><strong>Categoria:</strong> Doces</p>
+                    <section class="botoes">
+                        <button type="submit">EDITAR</button>
+                        <button disabled="disabled">EXCLUIR</button>
+                    </section>
+                </div>
+            </section>
+        </section>
+        <section id="action">
+            <h1><i class="fa-solid fa-cart-shopping"></i> Pedidos em Ação</h1>
+            <section class="cards1">
+                <div class="card1">
+                    <h3><strong>Pedido #150</strong></h3>
+                    <p><strong>Cliente:</strong> João Vitor</p>
+                    <p><strong>Itens:</strong> 2 Brigadeiros de Churros e 1 Brigadeiro de Nesquik</p>
+                    <p><strong>Entregador:</strong> Rafael</p>
+                    <strong>Status:</strong> <span class="status preparando"> Preparando</span>
+                    <br>
+                    <button disabled="disabled">CANCELAR</button>
+                </div>
+                <div class="card1">
+                    <h3><strong>Pedido #151</strong></h3>
+                    <p><strong>Cliente:</strong> Maria Vitória</p>
+                    <p><strong>Itens:</strong> 2 Brigadeiros de Ninho com Nutela e 2 Brigadeiros de Oreo</p>
+                    <p><strong>Entregador:</strong> Lázaro</p>
+                    <strong>Status:</strong> <span class="status acaminho">A caminho</span>
+                    <br>
+                    <button disabled="disabled">CANCELAR</button>
+                </div>
+                <div class="card1">
+                    <h3><strong>Pedido #152</strong></h3>
+                    <p><strong>Cliente:</strong> Ornã</p>
+                    <p><strong>Itens:</strong> 3 Brigadeiros de Ferrero e 1 Brigadeiro Tradicional</p>
+                    <p><strong>Entregador:</strong> Thales</p>
+                    <strong>Status:</strong> <span class="status entregue">Entregue</span>
+                    <br>
+                    <button disabled="disabled">CANCELAR</button>
+                </div>
+                <!-- <div class="card">
+                    <h3>Pedido #154</h3>
+                    <p>Cliente: Nick</p>
+                    <p>Entregador: Rafael</p>
+                    <span class="status preparando">Preparando</span>
+                    <br>
+                    <button class="cancelar">Cancelar</button>
+                </div>
+                <div class="card">
+                    <h3>Pedido #155</h3>
+                    <p>Cliente: João Paulo</p>
+                    <p>Entregador: Thales</p>
+                    <span class="status acaminho">A caminho</span>
+                    <br>
+                    <button class="cancelar">Cancelar</button>
+                </div>
+                <div class="card">
+                    <h3>Pedido #156</h3>
+                    <p>Cliente: Bruna Rafaela</p>
+                    <p>Entregador: Lázaro</p>
+                    <span class="status acaminho">A caminho</span>
+                    <br>
+                    <button class="cancelar" disabled>Cancelar</button>
+                </div> -->
+            </section>
+        </section>
+        <section id="vision">
+            <h1><i class="fa-solid fa-square-poll-vertical"></i> Relatório de Vendas</h1>
+            <table>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade Vendida</th>
+                    <th>Valor Total</th>
+                </tr>
+                <tr>
+                    <td>Brigadeiro Tradicional</td>
+                    <td>50</td>
+                    <td>R$ 100,00</td>
+                </tr>
+                <tr>
+                    <td>Brigadeiro de Ninho com Nutela</td>
+                    <td>30</td>
+                    <td>R$ 60,00</td>
+                </tr>
+                <tr>
+                    <td>Brigadeiro de Oreo</td>
+                    <td>40</td>
+                    <td>R$ 80,00</td>
+                </tr>
+                <tr>
+                    <td>Brigadeiro de Nesquik</td>
+                    <td>10</td>
+                    <td>R$ 20,00</td>
+                </tr>
+                <tr>
+                    <td>Brigadeiro de Amendoim</td>
+                    <td>25</td>
+                    <td>R$ 50,00</td>
+                </tr>
+                <tr>
+                    <td>Brigadeiro de Churros</td>
+                    <td>60</td>
+                    <td>R$ 120,00</td>
+                </tr>
+                <tr class="total">
+                    <td>Total</td>
+                    <td>215</td>
+                    <td>R$ 430,00</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <img src="/templates/img/logoBranca.png" alt="">
+        <h3>Compartilhe algo delicioso</h3>
+        <ul>
+            <li><i class="fa-brands fa-instagram fa-2x"></i></li>
+            <li><i class="fa-brands fa-twitter fa-2x"></i></li>
+            <li><i class="fa-brands fa-facebook fa-2x"></i></li>
+        </ul>
+        <p>Imagens meramente ilustrativas. Consulte os restaurantes participantes.  & © 2025 IFBite Equipe. Todos os direitos reservados. </p>
+    </footer>
 </body>
 </html>

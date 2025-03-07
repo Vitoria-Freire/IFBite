@@ -3,16 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="/static/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="icon"  href="/templates/img/Logo.png">
 
-    <title>Document</title>
+    <title>Carrinho</title>
 </head>
 <body>
+
+    <header> 
+        <a href="./home.html" class="fa-solid fa-house home-icon"></a>
+        <img src="./img/logoBranca.png" alt="Logo" class="logo">
+    </header>
+
+    <div class="containerTitulo">
+        <div class="titulo">
+           <h1>CARRINHO</h1>
+        </div>
+     
+        <div class="linhaProgresso">
+           <ul class="progress-bar-bolinhas">
+              <li class="bolinha completo textProgresso">1</li>
+              <li class="bolinha textProgresso">2</li>
+              <li class="bolinha textProgresso">3</li>
+              <li class="bolinha textProgresso">4</li>
+           </ul>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="textProduto">
+            <h1>PRODUTO</h1>
+        </div>
+        <div class="textQuanti">
+            <h1>QUANTI.</h1>
+        </div>
+        <div class="textValor">
+            <h1>VALOR</h1>
+        </div>
+    </div>
+
+    <div class="carrinho">
+        <div class="selecao">
+            <input type="checkbox">
+        </div>
+        <div class="product-card">
+            <img src="./img/home/hamburgueres.png" alt="Produto">
+            <div class="product-info">
+                <h2>Bauru da vera</h2>
+                <p>carne de hamburgue, ovo, bacon, 4 queijos, tomate, alface e 5 molhos. kkkkkkkk kkkkk,kkk ,kkkk ,kkkkk ,kkkkkkk</p>
+            </div>
+        </div>
+        <div class="quantity-container">
+            <div class="quantity-box">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="remove-btn">REMOVER</button>
+        </div>
+        <div class="price">R$ 35,00</div>
+    </div>
+    <div class="carrinho">
+        <div class="selecao">
+            <input type="checkbox">
+        </div>
+        <div class="product-card">
+            <img src="./img/home/doces.png" alt="Produto">
+            <div class="product-info">
+                <h2>Docinho de morango</h2>
+                <p>Sabor Morango</p>
+            </div>
+        </div>
+        <div class="quantity-container">
+            <div class="quantity-box">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="remove-btn">REMOVER</button>
+        </div>
+        <div class="price">R$ 10,00</div>
+    </div>
+    <div class="carrinho">
+        <div class="selecao">
+            <input type="checkbox">
+        </div>
+        <div class="product-card">
+            <img src="./img/home/bebidas.png" alt="Produto">
+            <div class="product-info">
+                <h2>Suquinho</h2>
+                <p>Sabor Laranja</p>
+            </div>
+        </div>
+        <div class="quantity-container">
+            <div class="quantity-box">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="remove-btn">REMOVER</button>
+        </div>
+        <div class="price">R$ 12,00</div>
+    </div> 
+
+    <div class="barraTotal">
+        <div class="valorContainer">
+           <div class="subtotal">
+              <span>SUBTOTAL:</span>
+              <p class="valorSubtotal">R$ 57,00</p>
+           </div>
+           <div class="frete">
+              <span>FRETE:</span>
+              <p class="valorFrete">R$ 3,00</p>
+           </div>
+        </div>
+    </div>
+    <div class="barraTotal">
+        <div class="textTotal">
+            <h1>TOTAL</h1>
+        </div>
+    </div>
+    <div class="barraPrecoTotal">
+        <div class="precoTotal">
+            <h1>R$ 60,00</h1>
+        </div>
+    </div>
+
+    <div class="botao-container">
+        <a href="./home.html" class="continuar-btn">CONTINUAR COMPRANDO</a>
+        <a href="./pagamento.html"class="finalizar-btn">FINALIZAR COMPRA</a>
+    </div>
     
+
+    <footer>
+        <img src="/templates/img/logoBranca.png" alt="">
+        <h3>Compartilhe algo delicioso</h3>
+        <ul>
+            <li><i class="fa-brands fa-instagram fa-2x"></i></li>
+            <li><i class="fa-brands fa-twitter fa-2x"></i></li>
+            <li><i class="fa-brands fa-facebook fa-2x"></i></li>
+        </ul>
+        <p>Imagens meramente ilustrativas. Consulte os restaurantes participantes.  & © 2025 IFBite Equipe. Todos os direitos reservados. </p>
+    </footer>
 </body>
 </html>
