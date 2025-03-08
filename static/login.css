@@ -84,7 +84,7 @@ p{
     font-weight: 350;
 }
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #2d2d31d1;
     transition: calc(1.5);
 }

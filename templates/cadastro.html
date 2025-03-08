@@ -20,19 +20,48 @@
             <section class="form">
                 <h1>Venha vazer parte desta familia!</h1>
                 <p>Cadastre-se:</p>
-                <form action="/templates/home.html" method="post">
+                <form method="POST">
                     <label for="email">E-mail:</label>
                     <input type="email" name="email" autofocus required>
+
                     <label for="senha">Senha:</label>
                     <input type="password" name="senha" id="senha" required>
+
                     <label for="nome">Nome Completo: </label>
                     <input type="text" name="nome" id="nome" required>
+
                     <label for="tel">Telefone:</label>
                     <input type="tel" name="tel" id="tel" required>
+                    
+                    <div class="opcoes">
+                        <div class="opcao">
+                            <input type="checkbox" name="tipoUsuario" id="cliente" value='cli' onclick="selecionarUnico(this)">
+                            <label for="cliente">Cliente</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="checkbox" name="tipoUsuario" id="entregador" value='ent' onclick="selecionarUnico(this)">
+                            <label for="entregador">Entregador</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="checkbox" name="tipoUsuario" id="restaurante" value='res' onclick="selecionarUnico(this)">
+                            <label for="restaurante">Restaurante</label>
+                        </div>
+                    </div>
+
                     <button type="submit">Cadastrar</button>
                 </form>
             </section>
         </section>
     </section>
+
+    <script>
+        function selecionarUnico(marcado) {
+            document.querySelectorAll('input[type="checkbox"][name="tipoUsuario"]').forEach((cb) => {
+                if (cb !== marcado) cb.checked = false;
+            });
+        }
+    </script>
+
 </body>
+
 </html>

@@ -125,6 +125,40 @@ button:hover {
     color: var(--corprimaria);
 }
 
+/* OPÇÕES TIPO DE USUARIO */
+
+.opcoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    margin: 20px 20px 0 10px;
+}
+
+.opcao{
+    display: flex;
+    align-items: center;
+    
+}
+
+.opcao label{
+    margin-bottom: 15%;
+}
+
+input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    cursor: pointer;
+    margin-right: 0px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--cordestaque);
+    border-color: var(--cordestaque);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .metade-esquerda {
