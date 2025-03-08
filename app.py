@@ -6,11 +6,23 @@ from crud import read
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    return render_template('home.html')
+def index():
+    return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+
+        usuario = read("SELECT * FROM usuario WHERE email = %s",
+                       (email, ))
+        
+        if usuario[0]['senha'] == senha:
+            return render_template('sucesso.html', mensagem = f"Seja bem vindo {usuario[0]['nome']}!", url = "/")
+        else:
+            return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/login")
+        
     return render_template('login.html')
 
 @app.route('/cadastro', methods=['GET', 'POST'])
@@ -18,7 +30,7 @@ def cadastro():
     if request.method == 'POST':
         email = request.form.get('email')
         senha = request.form.get('senha')
-        nome = request.form.get('nome')
+        nome = request.form.get('nome').title()
         telefone = request.form.get('tel')
         tipoUsuario = request.form.get('tipoUsuario')
         
