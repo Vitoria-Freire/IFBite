@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Realizado com Sucesso</title>
+
+  <!-- Redireciona para login.html após 3 segundos -->
+  <meta http-equiv="refresh" content="3 ;url={{ url }}">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #dc3545; /* Tom de vermelho fracasso */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+    .mensagem{
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="mensagem">
+    <h1>{{ mensagem }}</h1>
+    <p>Aguarde! Você será redirecionado em breve...</p>
+  </div>
+</body>
+</html>
