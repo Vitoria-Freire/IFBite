@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/perfil.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../static/img/home/logoHeader.png" alt="logo">
+        </div>
+    
+        <nav>
+            <a href="#Localidade">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Localidades</p>
+            </a>
+    
+            <a href="{{ url_for('index') }}">
+                <i class="fas fa-box"></i>
+                <p>Pedidos</p>
+            </a>
+
+            <a href="#Dados">
+                <i class="fas fa-user"></i>
+                <p>Modificar Dados</p>
+            </a>
+        </nav>
+    
+        <div class="perfil">
+            <a href="{{ url_for('index') }}">
+                <h1>Olá, {{ usuario[0]['nome'] }}!</h1>
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="container" id="Dados">
+        <h2 class="title">Perfil do Usuário</h2>
+    
+        <div class="profile-header">
+            <i class="fas fa-user"></i>
+            <div>
+                <h3>{{ usuario[0]['nome'] }}</h3>
+                {% if usuario[0]['tipo'] == 'cli' %}
+                    <p>Cliente</p>
+                {% elif usuario[0]['tipo'] == 'ent' %}
+                    <p>Entregador</p>
+                {% elif usuario[0]['tipo'] == 'res' %}
+                    <p>Restaurante</p>
+
+                {% endif %}
+            </div>
+        </div>
+    
+        <form method="POST">
+            <div class="profile-info">
+                <label for="nome">Nome:</label>
+                <input type="nome" name="nome" id="nome" placeholder="{{ usuario[0]['nome'] }}" required>
+            </div>
+
+            <div class="profile-info">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" placeholder="{{ usuario[0]['email'] }}" required>
+            </div>
+    
+            <div class="profile-info">
+                <label for="tel">Telefone:</label>
+                <input type="tel" name="tel" id="tel" placeholder="{{ usuario[0]['telefone'] }}" required>
+            </div>
+    
+            <div class="profile-info">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="{{ usuario[0]['senha'] }}" required>
+            </div>
+    
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    
+    </div>    
+
+    <div class="container" id="Localidade">
+        <h2 class="title">Localidades do Usuário</h2>
+    
+        <div class="profile-header">
+            <i class="fas fa-user"></i>
+            <div>
+                <h3>{{ usuario[0]['nome'] }}</h3>
+                {% if usuario[0]['tipo'] == 'cli' %}
+                    <p>Cliente</p>
+                {% elif usuario[0]['tipo'] == 'ent' %}
+                    <p>Entregador</p>
+                {% elif usuario[0]['tipo'] == 'res' %}
+                    <p>Restaurante</p>
+
+                {% endif %}
+            </div>
+        </div>
+    
+        <form method="POST">
+            {% for endereco in enderecos %}
+                <div class="endereco">
+                    <p>{{endereco['localidade']}}</p>
+                </div>
+            {% endfor %}
+
+            <div class="profile-info">
+                <label for="endereco">Localidade:</label>
+                <input type="text" name="endereco" id="endereco" placeholder="{{ usuario[0]['senha'] }}" required>
+            </div>
+    
+            <button type="submit">+ Adicionar Localidade</button>
+        </form>
+    
+    </div> 
+
+</body>
+</html>

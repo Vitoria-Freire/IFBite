@@ -107,3 +107,39 @@ def home():
                        (id, ))
     
     return render_template('home.html', usuario = usuario)
+
+@app.route('/perfil', methods=['GET', 'POST'])
+@login_requerido
+def perfil():
+    id = session.get('usuario')
+    usuario = read("SELECT * FROM usuario WHERE id = %s",
+                       (id, ))
+    
+    enderecos = read("SELECT * FROM localidade WHERE idUsuario = %s",
+                       (id, ))
+    
+    if request.method == 'POST':
+        try:
+            email = request.form.get('email')
+            senha = request.form.get('senha')
+            nome = request.form.get('nome').title()
+            telefone = request.form.get('tel')
+            if createUpdateDelete(
+                        "UPDATE usuario SET email = %s, senha = %s, nome = %s, telefone = %s WHERE id = %s",
+                        (email, senha, nome, telefone, id),
+                        "UPDATE"):
+                return render_template('sucesso.html', mensagem = f"Seus Dados Foram Alterados Com Sucesso!", url = "/login")
+            else:
+                return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/perfil")
+            
+        except:
+            endereco = request.form.get('endereco')
+            if createUpdateDelete(
+                        "INSERT INTO localidade (idUsuario, localidade) VALUES (%s, %s)",
+                        (id, endereco),
+                        "INSERT"):
+                return render_template('sucesso.html', mensagem = f"Localidade Adicionada Com Sucesso!", url = "/perfil")
+            else:
+                return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/perfil")
+
+    return render_template('perfil.html', usuario = usuario, enderecos = enderecos)
