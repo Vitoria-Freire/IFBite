@@ -29,6 +29,11 @@
                 <i class="fas fa-user"></i>
                 <p>Modificar Dados</p>
             </a>
+
+            <a href="{{ url_for('logout') }}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Sair</p>
+            </a>
         </nav>
     
         <div class="perfil">
@@ -98,6 +103,8 @@
                     <p>Restaurante</p>
 
                 {% endif %}
+
+                
             </div>
         </div>
     
