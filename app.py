@@ -154,3 +154,19 @@ def deleteLocalizacao(localidade):
         return render_template('sucesso.html', mensagem = f"Localidade Excluida Com Sucesso!", url = "/perfil")
     else:
         return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/perfil")
+
+@app.route('/painelRestaurante')
+@login_requerido
+def painelRestaurante():
+        return render_template('painelRestaurante.html')
+
+@app.route('/entregas')
+@login_requerido
+def entregas():
+    id = session.get('usuario')
+    usuario = read("SELECT tipo, nome FROM usuario WHERE id = %s",
+                       (id, ))
+
+    pedidos = read("SELECT p.id, u.nome, p.localidade, p.taxaEntrega FROM usuario AS u, pedido AS p WHERE u.id = idUsuariopede AND statusPedido = 'Em Preparo'", 
+                   None)
+    return render_template('entregas.html',pedidos = pedidos, usuario = usuario)

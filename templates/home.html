@@ -29,12 +29,12 @@
             </a>
     
             {% if usuario[0]['tipo'] == 'ent' %}
-                <a href="{{ url_for('index') }}">
+                <a href="{{ url_for('entregas') }}">
                     <i class="fa-solid fa-truck"></i>
                     <p>Entregas</p>
                 </a>
             {% elif usuario[0]['tipo'] == 'res' %}
-                <a href="{{ url_for('index') }}">
+                <a href="{{ url_for('painelRestaurante') }}">
                     <i class="fa-solid fa-utensils"></i>
                     <p>Meu Restaurante</p>
                 </a>
