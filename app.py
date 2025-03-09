@@ -1,9 +1,19 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
+from functools import wraps
+
+def login_requerido(f):
+    @wraps(f)
+    def decorador(*args, **kwargs):
+        if 'usuario' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorador
 
 from crud import createUpdateDelete
 from crud import read
 
 app = Flask(__name__)
+app.secret_key = "chave_super_secreta" 
 
 @app.route('/')
 def index():
@@ -18,12 +28,20 @@ def login():
         usuario = read("SELECT * FROM usuario WHERE email = %s",
                        (email, ))
         
+        print(usuario)
+        
         if usuario[0]['senha'] == senha:
-            return render_template('sucesso.html', mensagem = f"Seja bem vindo {usuario[0]['nome']}!", url = "/")
+            session['usuario'] = usuario[0]['id']
+            return render_template('sucesso.html', mensagem = f"Seja bem vindo {usuario[0]['nome']}!", url = "/home")
         else:
             return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/login")
         
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('usuario', None) 
+    return redirect(url_for('index'))
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
@@ -81,3 +99,8 @@ def cadastroRestaurante(id):
             return render_template('erro.html', mensagem = "Ocorreu um erro no Cadastro, Tente Novamente!", url = "/cadastroRestaurante")
 
     return render_template('cadastroRestaurante.html')
+
+@app.route('/home')
+@login_requerido
+def home():
+    return render_template('home.html')
