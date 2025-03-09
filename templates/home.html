@@ -14,15 +14,38 @@
 <body>
     <header>
         <div class="logo">
-            <h1>VOCE ESTÁ LOGADO</h1>
             <img src="../static/img/home/logoHeader.png" alt="logo">
         </div>
-
-
-        <div class="header-content">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Busque Aqui ...">
-            <a href="{{ url_for('login') }}"><button type="button">Entrar</button></a>
+    
+        <nav>
+            <a href="{{ url_for('index') }}">
+                <i class="fa-solid fa-utensils"></i>
+                <p>Restaurantes</p>
+            </a>
+    
+            <a href="{{ url_for('index') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Carrinho</p>
+            </a>
+    
+            {% if usuario[0]['tipo'] == 'ent' %}
+                <a href="{{ url_for('index') }}">
+                    <i class="fa-solid fa-truck"></i>
+                    <p>Entregas</p>
+                </a>
+            {% elif usuario[0]['tipo'] == 'res' %}
+                <a href="{{ url_for('index') }}">
+                    <i class="fa-solid fa-utensils"></i>
+                    <p>Meu Restaurante</p>
+                </a>
+            {% endif %}
+        </nav>
+    
+        <div class="perfil">
+            <a href="{{ url_for('index') }}">
+                <h1>Olá, {{ usuario[0]['nome'] }}!</h1>
+                <i class="fa-solid fa-user"></i>
+            </a>
         </div>
     </header>
 

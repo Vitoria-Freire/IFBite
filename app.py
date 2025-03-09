@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from functools import wraps
+from crud import createUpdateDelete
+from crud import read
 
 def login_requerido(f):
     @wraps(f)
@@ -8,9 +10,6 @@ def login_requerido(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorador
-
-from crud import createUpdateDelete
-from crud import read
 
 app = Flask(__name__)
 app.secret_key = "chave_super_secreta" 
@@ -103,4 +102,8 @@ def cadastroRestaurante(id):
 @app.route('/home')
 @login_requerido
 def home():
-    return render_template('home.html')
+    id = session.get('usuario')
+    usuario = read("SELECT tipo, nome FROM usuario WHERE id = %s",
+                       (id, ))
+    
+    return render_template('home.html', usuario = usuario)
