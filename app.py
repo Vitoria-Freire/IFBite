@@ -143,3 +143,14 @@ def perfil():
                 return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/perfil")
 
     return render_template('perfil.html', usuario = usuario, enderecos = enderecos)
+
+@app.route('/deleteLocalizacao<localidade>', methods=['GET', 'POST'])
+@login_requerido
+def deleteLocalizacao(localidade):
+    id = session.get('usuario')
+    if createUpdateDelete("DELETE FROM localidade WHERE idUsuario = %s AND localidade = %s",
+                            (id, localidade),
+                            "DELETE"):
+        return render_template('sucesso.html', mensagem = f"Localidade Excluida Com Sucesso!", url = "/perfil")
+    else:
+        return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/perfil")

@@ -32,7 +32,7 @@
         </nav>
     
         <div class="perfil">
-            <a href="{{ url_for('index') }}">
+            <a href="{{ url_for('perfil') }}">
                 <h1>Olá, {{ usuario[0]['nome'] }}!</h1>
                 <i class="fa-solid fa-user"></i>
             </a>
@@ -105,12 +105,13 @@
             {% for endereco in enderecos %}
                 <div class="endereco">
                     <p>{{endereco['localidade']}}</p>
+                    <a href="{{url_for('deleteLocalizacao', localidade = endereco['localidade'])}}"><i class="fa-solid fa-trash"></i></a>
                 </div>
             {% endfor %}
 
             <div class="profile-info">
                 <label for="endereco">Localidade:</label>
-                <input type="text" name="endereco" id="endereco" placeholder="{{ usuario[0]['senha'] }}" required>
+                <input type="text" name="endereco" id="endereco" placeholder="Adicione um novo endereço aqui!" required>
             </div>
     
             <button type="submit">+ Adicionar Localidade</button>

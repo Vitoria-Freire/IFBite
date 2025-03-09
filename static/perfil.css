@@ -165,5 +165,17 @@ button:hover {
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+}
+
+.endereco i{
+   color: var(--corsecundaria);
+   transition: transform 0.3s;
+}
+
+.endereco i:hover{
+    transform: scale(1.2);
 }
