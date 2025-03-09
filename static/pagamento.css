@@ -13,7 +13,7 @@
 body, html {
    background-color: var(--corprimaria);
    color: var(--corfont);
-   font-family: 'Roboto';
+   font-family: 'Roboto', sans-serif;
    display: flex;
    justify-content: center;
    align-items: flex-start; 
@@ -67,6 +67,7 @@ header .logo {
    position: relative;
    width: 100%;
    text-align: center;
+   margin-top: 20px;
 }
 .titulo {
    font-size: 24px;
@@ -117,18 +118,23 @@ header .logo {
    flex-direction: column;
    align-items: center;
    width: 100%;
-   max-width: 800px; 
-   margin-top: 40px;
+   max-width: 900px; 
+   margin-top: 50px;
    margin-bottom: 50px; 
    text-align: center; 
    margin-left: auto;
    margin-right: auto; 
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 40px;
+   padding: 30px;
 }
 
 .metodoPagamento h2, .confirmacaoPedido h2, .resumoCompra h2 {
    font-size: 28px; 
    color: var(--corsecundaria);
-   margin-bottom: 15px;
+   margin-bottom: 20px;
 }
 
 .opcoes-pagamento {
