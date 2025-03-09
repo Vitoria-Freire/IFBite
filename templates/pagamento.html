@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/carrinho.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/pagamento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon"  href="/templates/img/Logo.png">
-    
-
+    <link rel="icon" href="/templates/img/Logo.png">
     <title>Pagamento</title>
 </head>
 <body>
     <header> 
         <a href="./home.html" class="fa-solid fa-house home-icon"></a>
-        <img src="./img/logoBranca.png" alt="Logo" class="logo">
+        <img src="img1/pagamentos/logoBranca.png" alt="Logo" class="logo">
     </header>
+
     <div class="containerTitulo">
         <div class="titulo">
            <h1>PAGAMENTO</h1>
@@ -31,5 +30,47 @@
            </ul>
         </div>
     </div>
+
+    <div class="metodoPagamento">
+        <h2>Escolha o Método de Pagamento</h2>
+        <div class="opcoes-pagamento">
+            <button class="metodo-btn" id="pix">PIX</button>
+            <button class="metodo-btn" id="cartao">Cartão de Crédito</button>
+            <button class="metodo-btn" id="dinheiro">Dinheiro</button>
+        </div>
+    </div>
+
+    <div class="confirmacaoPedido">
+        <h2>Confirmação dos Dados do Pedido</h2>
+        <div class="dadosPedido">
+            <p><strong>Nome:</strong> Jmcmc</p>
+            <p><strong>Endereço:</strong> Rmdms</p>
+            <p><strong>Telefone:</strong> 51474145</p>
+            <p><strong>Itens:</strong> kcmmncww cjcejnmx wcs s </p>
+        </div>
+    </div>
+
+    <div class="resumoCompra">
+        <h2>Resumo da Compra</h2>
+        <div class="itensCompra">
+            <p><strong>Pizza de Calabresa</strong> - R$ 30,00</p>
+            <p><strong>Coca-Cola 2L</strong> - R$ 8,00</p>
+        </div>
+        <div class="totalCompra">
+            <p><strong>Total:</strong> R$ 38,00</p>
+        </div>
+    </div>
+
+    <footer>
+        <img src="/templates/img/logoBranca.png" alt="">
+        <h3>Compartilhe algo delicioso</h3>
+        <ul>
+            <li><i class="fa-brands fa-instagram fa-2x"></i></li>
+            <li><i class="fa-brands fa-twitter fa-2x"></i></li>
+            <li><i class="fa-brands fa-facebook fa-2x"></i></li>
+        </ul>
+        <p>Imagens meramente ilustrativas. Consulte os restaurantes participantes.  & © 2025 IFBite Equipe. Todos os direitos reservados. </p>
+    </footer>
+
 </body>
 </html>

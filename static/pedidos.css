@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --corprimaria : #F2F2F2;
+    --corsecundaria: #B92616;
+    --cordestaque:#47a04a;
+    --corfont: #2D2D31;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--corprimaria);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corsecundaria);
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    height: 100px;
+}
+
+header .logo {
+    max-width: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home-icon {
+    font-size: 40px;
+    color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home-icon:hover {
+    font-size: 42px;
+}
+
+.historico {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; 
+    width: 80%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.historico h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+.pedido {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.pedido:last-child {
+    border-bottom: none;
+}
+
+.info {
+    font-size: 1rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.status-preparo {
+    background-color: #f0ad4e;
+}
+
+.status-entrega {
+    background-color: #0275d8;
+}
+
+.status-entregue {
+    background-color: #5cb85c;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: var(--corsecundaria);
+    color: var(--corprimaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 10%; 
+}
+
+footer img {
+    width: 120px;
+    height: auto;
+}
+
+footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: center;
+}
+
+nav ul li a[href="#restaurantes"],
+nav ul li a[href="#footer"] {
+    scroll-behavior: smooth;
+}
