@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
     <link rel="stylesheet" href="/static/login.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +18,22 @@
         </section>
         <section class="forms">
             <section class="form">
-                <h1>Comida rápida para a sua rotina de federal em um só clique!</h1>
+                <h1>Comida rápida para a sua rotina de federal em um só clique!</h1>
                 <p>Informe o seus dados para continuar:</p>
-                <form action="/templates/home.html" method="post">
+                <!-- Formulário de Login -->
+                <form action="/login" method="post">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" autofocus>
+                    <input type="email" name="email" autofocus required>
                     <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha">
-                    <button type="submit">Cadastrar</button>
+                    <input type="password" name="senha" id="senha" required>
+                    <button type="submit">Entrar</button>
                 </form>
+                <!-- Mensagem de erro (será exibida apenas se o login falhar) -->
+                <p id="erro" style="color: red; display: none;">Usuário não cadastrado. Clique <a href="/cadastro">aqui</a> para se cadastrar.</p>
+                <!-- Link para a página de cadastro -->
+                <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
             </section>
         </section>
     </section>
 </body>
-</html> 
+</html>
