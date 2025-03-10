@@ -14,13 +14,9 @@ body, html {
    background-color: var(--corprimaria);
    color: var(--corfont);
    font-family: 'Roboto', sans-serif;
-   display: flex;
-   justify-content: center;
-   align-items: flex-start; 
-   min-height: 100%; 
-   flex-direction: column;
-   width: 100%; 
-   padding: 0; 
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-column: 1/-1;
 }
 
 /* HEADER */
@@ -30,12 +26,12 @@ header {
    align-items: center;
    padding: 15px;
    background-color: var(--corsecundaria);
-   width: 100%;
+   grid-column: 1 / -1;
    height: 110px;
    position: relative;
 }
 .logo {
-   max-width: 150px;
+   max-width: 130px;
 }
 header .logo {
    position: absolute;
@@ -65,28 +61,23 @@ header .logo {
    grid-column: 2/ 12;
    height: 100px;
    position: relative;
-   width: 100%;
-   text-align: center;
-   margin-top: 20px;
 }
 .titulo {
-   font-size: 24px;
-   color: var(--corsecundaria);
+   text-align: left;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    flex: 1;
+   font-size: 24px;
+   color: var(--corsecundaria)
 }
 .textProgresso {
-   font-size: 26px;
+   font-size: 20px;
 }
 .linhaProgresso {
    display: flex;
-   justify-content: center;
    align-items: center;
    gap: 25px;
-   margin-top: 10px;
-   margin-right: 300px;
 }
 .progress-bar-bolinhas {
    list-style: none;
@@ -108,72 +99,85 @@ header .logo {
    font-weight: bold;
 }
 .bolinha.completo {
-   background-color: var(--cordestaque); 
-   border: 2px solid var(--cordestaque); 
+   background-color: var(--cordestaque);
+   border: 2px solid var(--cordestaque);
    color: var(--corprimaria);
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
-}
-.metodoPagamento, .confirmacaoPedido, .resumoCompra {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100%;
-   max-width: 900px; 
-   margin-top: 50px;
-   margin-bottom: 50px; 
-   text-align: center; 
-   margin-left: auto;
-   margin-right: auto; 
-   background-color: #fff;
-   border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   margin-top: 40px;
-   padding: 30px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.metodoPagamento h2, .confirmacaoPedido h2, .resumoCompra h2 {
-   font-size: 28px; 
-   color: var(--corsecundaria);
+/* FORMULÁRIO DE PAGAMENTO */
+.containerPagamento {
+   padding: 20px;
+   grid-column: 2 / 12;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.input-group {
    margin-bottom: 20px;
 }
-
-.opcoes-pagamento {
-   display: flex;
-   gap: 20px;
-   justify-content: center;
+.input-label {
+   font-size: 16px;
+   color: var(--corsecundaria);
+   display: block;
+   margin-bottom: 5px;
+}
+input[type="text"],
+input[type="month"] {
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 16px;
+}
+input[type="text"]:focus,
+input[type="month"]:focus {
+   border-color: var(--corsecundaria);
+   outline: none;
 }
 
-.metodo-btn {
-   padding: 20px 40px;
-   border: 2px solid var(--cordestaque);
+/* BOTOES DE FINALIZAR */
+.botao-container {
+   display: grid;
+   padding: 15px;
+   grid-column: 2 / 12;
+   height: 80px;
+   position: relative;
+   width: 100%;
+   box-sizing: border-box;
+   margin-bottom: 20px;
+}
+.continuar-btn, .finalizar-btn {
+   padding: 8px 12px;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 5px;
+   border: none;
+   box-sizing: border-box;
+   width: 100%; /* Faz os botões ocuparem 100% da largura do contêiner */
+}
+.continuar-btn {
+   color: var(--corsecundaria);
+   grid-column: 1;
+}
+.continuar-btn:hover {
+   color: var(--cordestaque);
+}
+.finalizar-btn {
    background-color: var(--cordestaque);
    color: var(--corprimaria);
-   font-weight: bold;
-   border-radius: 12px;
-   cursor: pointer;
-   transition: transform 0.3s ease;
-   font-size: 18px;
-}
-.metodo-btn:hover {
-   transform: scale(1.1);
-}
-
-.dadosPedido p, .itensCompra p {
-   font-size: 20px;
-   margin: 10px 0;
-}
-
-.totalCompra {
-   font-size: 24px;
-   font-weight: bold;
-   margin-top: 20px;
+   grid-column: 3;
    text-align: center;
+   text-decoration: none;
+}
+.finalizar-btn:hover {
+   opacity: 0.6;
 }
 
 /* FOOTER */
 footer {
    background-color: var(--corsecundaria);
-   width: 100%;
+   grid-column: 1/-1;
    color: var(--corprimaria);
    display: flex;
    flex-direction: column;
@@ -181,8 +185,6 @@ footer {
    justify-content: center;
    text-align: center;
    padding: 20px;
-   margin-left: auto;
-   margin-right: auto; 
 }
 footer img {
    width: 120px;
@@ -194,4 +196,130 @@ footer ul {
    list-style: none;
    padding: 15px 0;
    justify-content: center;
+}
+
+/* MEDIA QUERY PARA TELAS PEQUENAS (ATÉ 390PX) */
+@media (max-width: 390px) {
+   header {
+       padding: 10px;
+       height: 80px;
+   }
+   .logo {
+       max-width: 100px;
+   }
+   .home-icon {
+       font-size: 30px;
+   }
+   
+   /* CONTAINER DO TITULO*/
+   .containerTitulo {
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+   }
+   .titulo {
+      font-size: 15px; 
+      text-align: center;
+      margin-bottom: 10px; 
+   }
+   .linhaProgresso {
+      gap: 10px; 
+      justify-content: center; 
+      flex-wrap: wrap;
+      margin-top: 0;
+   }
+   .progress-bar-bolinhas {
+      gap: 15px; 
+      left:30px;
+   }
+   .bolinha {
+      width: 10px; 
+      height: 10px; 
+      font-size: 5px; 
+      color: transparent;
+      background-color: transparent; 
+      margin-bottom: 5px; 
+   }
+   .bolinha.completo {
+      background-color: #367A1C;
+      color: transparent;
+      font-size: 10;
+   }
+   .textProgresso {
+      font-size: 20px;
+   }
+
+   
+   .containerPagamento {
+       padding: 15px;
+   }
+   .input-group {
+       margin-bottom: 15px;
+   }
+   .input-label {
+       font-size: 14px;
+   }
+   input[type="text"], input[type="month"] {
+       padding: 10px;
+       font-size: 14px;
+   }
+   
+   .botao-container {
+       padding: 10px;
+       margin-bottom: 15px;
+   }
+   .continuar-btn, .finalizar-btn {
+       font-size: 16px;
+       padding: 12px;
+   }
+   
+   footer {
+       padding: 15px;
+   }
+   footer img {
+       width: 100px;
+   }
+   footer ul {
+       flex-direction: column;
+       gap: 10px;
+   }
+}
+@media screen and (max-width: 1000px) {
+   /* CONTAINER DO TITULO*/
+   .containerTitulo {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+   }
+   .titulo {
+      font-size: 30px; 
+      text-align: center;
+      margin-bottom: 20px;
+   }
+   .linhaProgresso {
+      gap: 10px; 
+      justify-content: center; 
+      flex-wrap: wrap;
+      margin-top: 0;
+   }
+   .progress-bar-bolinhas {
+      gap: 15px; 
+      left:30px;
+   }
+   .bolinha {
+      width: 15px; 
+      height: 15px; 
+      font-size: 5px; 
+      color: transparent; 
+      background-color: transparent; 
+      margin-bottom: 5px; 
+   }
+   .bolinha.completo {
+      background-color: #367A1C;
+      color: transparent;
+      font-size: 10;
+   }
+   .textProgresso {
+      font-size: 20px;
+   }
 }

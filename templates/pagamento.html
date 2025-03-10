@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="/templates/img/Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Recursive:wght@300..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="icon"  href="/templates/img/Logo.png">
+
     <title>Pagamento</title>
 </head>
 <body>
@@ -20,49 +22,77 @@
         <div class="titulo">
            <h1>PAGAMENTO</h1>
         </div>
-     
         <div class="linhaProgresso">
-           <ul class="progress-bar-bolinhas">
-              <li class="bolinha textProgresso">1</li>
-              <li class="bolinha completo textProgresso">2</li>
-              <li class="bolinha textProgresso">3</li>
-              <li class="bolinha textProgresso">4</li>
-           </ul>
-        </div>
+            <ul class="progress-bar-bolinhas">
+               <li class="bolinha textProgresso">1</li>
+               <li class="bolinha textProgresso">2</li>
+               <li class="bolinha completo textProgresso">3</li>
+               <li class="bolinha textProgresso">4</li>
+            </ul>
+         </div>
     </div>
 
-    <div class="metodoPagamento">
-        <h2>Escolha o Método de Pagamento</h2>
-        <div class="opcoes-pagamento">
-            <button class="metodo-btn" id="pix">PIX</button>
-            <button class="metodo-btn" id="cartao">Cartão de Crédito</button>
-            <button class="metodo-btn" id="dinheiro">Dinheiro</button>
-        </div>
+    <div class="containerPagamento">
+        <form action="#" method="POST">
+            <!-- Escolha da forma de pagamento -->
+            <div class="input-group">
+                <label class="input-label">Escolha a Forma de Pagamento:</label>
+
+                <label>
+                    <input type="radio" name="forma-pagamento" value="cartao" checked> Cartão de Crédito
+                </label>
+                <label>
+                    <input type="radio" name="forma-pagamento" value="boleto"> Boleto Bancário
+                </label>
+                <label>
+                    <input type="radio" name="forma-pagamento" value="paypal"> PayPal
+                </label>
+                <label>
+                    <input type="radio" name="forma-pagamento" value="pix"> Pix
+                </label>
+            </div>
+
+            <!-- Campos para Cartão de Crédito -->
+            <div class="payment-option" id="cartao">
+                <div class="input-group">
+                    <label for="cartao" class="input-label">Número do Cartão:</label>
+                    <input type="text" id="cartao" name="cartao" placeholder="1234 5678 9012 3456">
+                </div>
+            </div>
+
+            <!-- Campos para Boleto Bancário -->
+            <div class="payment-option" id="boleto">
+                <div class="input-group">
+                    <label for="cpf" class="input-label">CPF para Boleto:</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF">
+                </div>
+            </div>
+
+            <!-- Campos para PayPal -->
+            <div class="payment-option" id="paypal">
+                <div class="input-group">
+                    <label for="email-paypal" class="input-label">Email do PayPal:</label>
+                    <input type="email" id="email-paypal" name="email-paypal" placeholder="Digite seu e-mail PayPal">
+                </div>
+            </div>
+
+            <!-- Campos para Pix -->
+            <div class="payment-option" id="pix">
+                <div class="input-group">
+                    <label for="chave-pix" class="input-label">Chave do Pix:</label>
+                    <input type="text" id="chave-pix" name="chave-pix" placeholder="Digite sua chave Pix">
+                </div>
+            </div>
+        </form>
     </div>
 
-    <div class="confirmacaoPedido">
-        <h2>Confirmação dos Dados do Pedido</h2>
-        <div class="dadosPedido">
-            <p><strong>Nome:</strong> Jmcmc</p>
-            <p><strong>Endereço:</strong> Rmdms</p>
-            <p><strong>Telefone:</strong> 51474145</p>
-            <p><strong>Itens:</strong> kcmmncww cjcejnmx wcs s </p>
-        </div>
-    </div>
-
-    <div class="resumoCompra">
-        <h2>Resumo da Compra</h2>
-        <div class="itensCompra">
-            <p><strong>Pizza de Calabresa</strong> - R$ 30,00</p>
-            <p><strong>Coca-Cola 2L</strong> - R$ 8,00</p>
-        </div>
-        <div class="totalCompra">
-            <p><strong>Total:</strong> R$ 38,00</p>
-        </div>
+    <div class="botao-container">
+        <a href="./dadosEntrega.html" class="continuar-btn">VOLTAR</a>
+        <a href="./compraConcluida.html"class="finalizar-btn">PAGAR</a>
     </div>
 
     <footer>
-        <img src="/templates/img/logoBranca.png" alt="">
+        <img src="../static/img/logoBranca.png" alt="">
         <h3>Compartilhe algo delicioso</h3>
         <ul>
             <li><i class="fa-brands fa-instagram fa-2x"></i></li>
@@ -71,6 +101,5 @@
         </ul>
         <p>Imagens meramente ilustrativas. Consulte os restaurantes participantes.  & © 2025 IFBite Equipe. Todos os direitos reservados. </p>
     </footer>
-
 </body>
 </html>
