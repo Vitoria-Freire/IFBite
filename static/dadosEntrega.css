@@ -1,0 +1,424 @@
+/* ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --corprimaria : #F2F2F2;
+    --corsecundaria: #B92616;
+    --cordestaque:#367A1C;
+    --corfont: #2D2D31;
+}
+body, html {
+    background-color: var(--corprimaria);
+    color: var(--corfont);
+    font-family: 'Roboto';
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1/-1;
+    
+}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--corsecundaria);
+    grid-column: 1 / -1;
+    height: 110px;
+    position: relative;
+}
+.logo {
+    max-width: 130px;
+}
+header .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.home-icon {
+    font-size: 40px;
+    color: var(--corprimaria);
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    cursor: pointer;
+}
+.home-icon:hover{
+    font-size: 42px;
+}
+ 
+
+/* CONTAINER DO TITULO*/
+.containerTitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    grid-column: 2/ 12;
+    height: 100px;
+    position: relative;
+}
+.titulo {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    font-size: 24px;
+    color: var(--corsecundaria)
+}
+.textProgresso{
+    font-size: 20px;
+}
+.linhaProgresso {
+    display: flex;
+    align-items: center;  
+    gap: 25px;
+}
+.progress-bar-bolinhas {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+.bolinha {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--corprimaria);
+    border: 2px solid var(--corsecundaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--corsecundaria);
+    font-weight: bold;
+}
+.bolinha.completo {
+    background-color: var(--cordestaque); 
+    border: 2px solid var(--cordestaque); 
+    color: var(--corprimaria);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.confirmacaoPedido{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.40);
+    margin-top: 40px;
+    padding: 30px;
+    display: flex;
+    padding: 15px;
+    grid-column: 4/ 10;
+    text-align: left;
+
+}
+.confirmacaoPedido form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    width: 100%;
+}
+
+.confirmacaoPedido label,.confirmacaoPedido input{
+    display: block;
+    font-size: 1.2em;
+    padding: 15px;
+    border-color: var(--corsecundaria);
+}
+
+.confirmacaoPedido label{
+    color: var(--corsecundaria);
+    text-decoration: underline;
+}
+.botao-container {
+    display: grid;
+    padding: 15px;
+    grid-column: 2 / 12;
+    height: 80px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    margin-top: 10px;;
+ }
+ .continuar-btn, .finalizar-btn {
+    padding: 8px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    width: 100%; 
+ }
+ .continuar-btn {
+    color: var(--corsecundaria);
+    grid-column: 1;
+ }
+ .continuar-btn:hover {
+    color: var(--cordestaque);
+ }
+ .finalizar-btn {
+    background-color: var(--cordestaque);
+    color: var(--corprimaria);
+    grid-column: 3;
+    text-align: center;
+    text-decoration: none;
+ }
+ .finalizar-btn:hover {
+    opacity: 0.6;
+ }
+
+ .produtos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    grid-column: 2/ 12;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.card h2{
+    color: var(--cordestaque);
+    margin-bottom: 15px;
+}
+
+.totalPedido {
+    background-color: var(--corprimaria);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    grid-column: 2 / 12;
+    text-align: center;
+}
+
+.totalPedido h2 {
+    font-size: 24px;
+    color: var(--corsecundaria);
+    margin-bottom: 10px;
+}
+
+.totalPedido .totalValor {
+    font-size: 28px;
+    color: var(--cordestaque);
+    font-weight: bold;
+}
+
+ footer {
+    background-color: var(--corsecundaria);
+    grid-column: 1/-1;
+    color: var(--corprimaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+ }
+ footer img {
+    width: 120px;
+    height: auto;
+ }
+ footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: center;
+ } 
+
+ @media screen and (max-width: 390px) {
+    /* HEADER*/
+    header {
+       flex-direction: row;
+       justify-content: center;
+       height: 60px;
+       padding: 20px 15px;
+    }
+   .logo {
+       max-width: 120px;
+    }
+    .home-icon{
+       font-size: 24px;
+    }
+ 
+    /* CONTAINER DO TITULO*/
+    .containerTitulo {
+       flex-direction: column;
+       height: auto;
+       padding: 15px;
+    }
+    .titulo {
+       font-size: 10px; 
+       text-align: center;
+       margin-bottom: 10px; 
+    }
+    .linhaProgresso {
+       gap: 10px; 
+       justify-content: center; 
+       flex-wrap: wrap;
+       margin-top: 0;
+    }
+    .progress-bar-bolinhas {
+       gap: 15px; 
+       left:30px;
+    }
+    .bolinha {
+       width: 10px; 
+       height: 10px; 
+       font-size: 5px; 
+       color: transparent;
+       background-color: transparent; 
+       margin-bottom: 5px; 
+    }
+    .bolinha.completo {
+       background-color: #367A1C;
+       color: transparent;
+       font-size: 10;
+    }
+    .textProgresso {
+       font-size: 20px;
+    }
+    
+    /*BOTOES DE FINALIZAR*/
+   .botao-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    height: auto;
+    }
+    .continuar-btn, .finalizar-btn {
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+    .finalizar-btn {
+        margin-bottom: 0; 
+        order: -1;
+    }
+    .confirmacaoPedido {
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .confirmacaoPedido label,
+    .confirmacaoPedido input {
+        font-size: 0.9em;  
+        padding: 8px; 
+    }
+    .produtos {
+        flex-direction: column;  
+        gap: 10px;  
+    }
+    .card {
+        width: 100%;  
+        margin-bottom: 10px;  
+    }
+    .totalPedido {
+        grid-column: 2 / 12; 
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .totalPedido h2 {
+        font-size: 18px;
+    }
+
+    .totalPedido .totalValor {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 870px){
+    .titulo {
+        font-size: 15px; 
+        text-align: center;
+        margin-bottom: 10px; 
+    }
+    /*BOTOES DE FINALIZAR*/
+    .botao-container {
+       display: flex;
+       flex-direction: column; 
+       justify-content: space-between; 
+       height: auto; 
+    }
+    .continuar-btn, .finalizar-btn {
+       width: 100%; 
+       margin-bottom: 10px; 
+    }
+    .finalizar-btn {
+       margin-bottom: 0; 
+       order: -1; 
+    }
+    .card {
+        width: 200px; 
+    }
+}
+@media screen and (max-width: 1000px) {
+    /* CONTAINER DO TITULO*/
+    .containerTitulo {
+       flex-direction: column;
+       height: auto;
+       padding: 20px;
+    }
+    .titulo {
+       font-size: 30px; 
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .linhaProgresso {
+       gap: 10px; 
+       justify-content: center; 
+       flex-wrap: wrap;
+       margin-top: 0;
+    }
+    .progress-bar-bolinhas {
+       gap: 15px; 
+       left:30px;
+    }
+    .bolinha {
+       width: 15px; 
+       height: 15px; 
+       font-size: 5px; 
+       color: transparent; 
+       background-color: transparent; 
+       margin-bottom: 5px; 
+    }
+    .bolinha.completo {
+       background-color: #367A1C;
+       color: transparent;
+       font-size: 10;
+    }
+    .textProgresso {
+       font-size: 20px;
+    }
+    .confirmacaoPedido {
+        grid-column: 2 / 12;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .confirmacaoPedido label,
+    .confirmacaoPedido input {
+        font-size: 1em;  
+        padding: 10px;  
+    }
+}
