@@ -155,7 +155,7 @@ header .logo {
     border-radius: 5px;
     border: none;
     box-sizing: border-box;
-    width: 100%; /* Faz os botões ocuparem 100% da largura do contêiner */
+    width: 100%; 
  }
  .continuar-btn {
     color: var(--corsecundaria);
@@ -202,6 +202,29 @@ header .logo {
     color: var(--cordestaque);
     margin-bottom: 15px;
 }
+
+.totalPedido {
+    background-color: var(--corprimaria);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    grid-column: 2 / 12;
+    text-align: center;
+}
+
+.totalPedido h2 {
+    font-size: 24px;
+    color: var(--corsecundaria);
+    margin-bottom: 10px;
+}
+
+.totalPedido .totalValor {
+    font-size: 28px;
+    color: var(--cordestaque);
+    font-weight: bold;
+}
+
  footer {
     background-color: var(--corsecundaria);
     grid-column: 1/-1;
@@ -299,16 +322,29 @@ header .logo {
     }
     .confirmacaoPedido label,
     .confirmacaoPedido input {
-        font-size: 0.9em;  /* Diminui o tamanho da fonte */
-        padding: 8px;      /* Ajusta o padding */
+        font-size: 0.9em;  
+        padding: 8px; 
     }
     .produtos {
-        flex-direction: column;  /* Alinha os cards em uma coluna */
-        gap: 10px;  /* Reduz o espaçamento entre os cards */
+        flex-direction: column;  
+        gap: 10px;  
     }
     .card {
-        width: 100%;  /* Faz os cards ocuparem 100% da largura disponível */
-        margin-bottom: 10px;  /* Ajusta o espaçamento entre os cards */
+        width: 100%;  
+        margin-bottom: 10px;  
+    }
+    .totalPedido {
+        grid-column: 2 / 12; 
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .totalPedido h2 {
+        font-size: 18px;
+    }
+
+    .totalPedido .totalValor {
+        font-size: 22px;
     }
 }
 
@@ -334,7 +370,7 @@ header .logo {
        order: -1; 
     }
     .card {
-        width: 200px;  /* Diminui a largura do card em telas menores */
+        width: 200px; 
     }
 }
 @media screen and (max-width: 1000px) {
@@ -382,7 +418,7 @@ header .logo {
     }
     .confirmacaoPedido label,
     .confirmacaoPedido input {
-        font-size: 1em;  /* Reduz o tamanho da fonte */
-        padding: 10px;   /* Ajusta o padding */
+        font-size: 1em;  
+        padding: 10px;  
     }
 }
