@@ -167,6 +167,58 @@ def entregas():
     usuario = read("SELECT tipo, nome FROM usuario WHERE id = %s",
                        (id, ))
 
-    pedidos = read("SELECT p.id, u.nome, p.localidade, p.taxaEntrega FROM usuario AS u, pedido AS p WHERE u.id = idUsuariopede AND statusPedido = 'Em Preparo'", 
+    pedidos = read("SELECT p.idUsuarioEntrega, p.id, u.nome, p.localidade, p.taxaEntrega, p.statusPedido, p.statusPagamento, p.tipoPagamento FROM usuario AS u, pedido AS p WHERE u.id = p.idUsuariopede AND p.statusPedido = 'Em Preparo' AND p.idUsuarioEntrega IS NULL", 
                    None)
-    return render_template('entregas.html',pedidos = pedidos, usuario = usuario)
+    
+    produtos = read("SELECT r.nome, c.idPedido FROM restaurante AS r, relacContem AS c, produto AS p WHERE c.idProduto = p.id AND p.idRestaurante = r.id", None)
+    
+    return render_template('entregas.html',pedidos = pedidos, usuario = usuario, produtos = produtos)
+
+@app.route('/entregasAceitas')
+@login_requerido
+def entregasAceitas():
+    id = session.get('usuario')
+    usuario = read("SELECT tipo, nome FROM usuario WHERE id = %s",
+                       (id, ))
+
+    pedidos = read("SELECT p.idUsuarioEntrega, p.statusEntrega, p.id, u.nome, p.localidade, p.taxaEntrega, p.statusPedido, p.statusPagamento, p.tipoPagamento FROM usuario AS u, pedido AS p WHERE u.id = p.idUsuariopede AND p.statusPedido = 'Em Preparo' AND p.idUsuarioEntrega = %s AND (p.statusEntrega <> %s OR p.statusEntrega IS NULL)", 
+                   (id, "Entregue"))
+    
+    produtos = read("SELECT r.nome, c.idPedido FROM restaurante AS r, relacContem AS c, produto AS p WHERE c.idProduto = p.id AND p.idRestaurante = r.id", None)
+    
+    return render_template('entregasAceitas.html',pedidos = pedidos, usuario = usuario, produtos = produtos)
+
+@app.route('/aceitarEntrega<idPedido>', methods=['GET', 'POST'])
+@login_requerido
+def aceitarEntrega(idPedido):
+    id = session.get('usuario')
+    if createUpdateDelete("UPDATE pedido SET idUsuarioEntrega = %s WHERE id = %s",
+                            (id, idPedido),
+                            "UPDATE"):
+
+        return render_template('sucesso.html', mensagem = f"Entrega aceita com sucesso!", url = "/entregasAceitas")
+    else:
+        return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/entregas")
+    
+@app.route('/AlterarStatusEntrega<idPedido>', methods=['GET', 'POST'])
+@login_requerido
+def AlterarStatusEntrega(idPedido):
+    id = session.get('usuario')
+    statusAtual = read("SELECT statusEntrega FROM pedido WHERE id = %s",
+                       (idPedido, ))
+    
+    if statusAtual[0]['statusEntrega'] == None:
+        status = "Pedido Retirado"
+    if statusAtual[0]['statusEntrega'] == 'Pedido Retirado':
+        status = "Em Rota"
+    elif statusAtual[0]['statusEntrega'] == 'Em Rota':
+        status = "Entregue"
+
+    if createUpdateDelete("UPDATE pedido SET statusEntrega = %s WHERE id = %s",
+                            (status, idPedido),
+                            "UPDATE"):
+
+        return render_template('sucesso.html', mensagem = f"Status Modificado com sucesso!", url = "/entregasAceitas")
+    else:
+        return render_template('erro.html', mensagem = f"Parece que Ocorreu um Erro, Tente Novamente!", url = "/entregasAceitas")
+    

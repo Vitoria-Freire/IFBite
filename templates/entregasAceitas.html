@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/entregasAceitas.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../static/img/home/logoHeader.png" alt="logo">
+        </div>
+
+        <nav>
+            <a href="{{ url_for('entregas') }}">
+                <i class="fa-solid fa-bars"></i>
+                <p>Entregas Disponíveis</p>
+            </a>
+    
+            <a href="{{ url_for('entregasAceitas') }}">
+                <i class="fa-solid fa-truck"></i>
+                <p>Entregas Aceitas</p>
+            </a>
+
+        </nav>
+    
+        <div class="perfil">
+            <a href="{{ url_for('perfil') }}">
+                <h1>Olá, {{ usuario[0]['nome'] }}!</h1>
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+        {% for pedido in pedidos%}
+            <div class="container">
+                <div class="pedido-info">
+                    <h1>Pedido N°: {{pedido['id']}}</h1>
+
+                    <p><strong>Nome do Cliente:</strong> {{ pedido['nome'] }}</p>
+                    <p><strong>Localidade:</strong> {{ pedido['localidade'] }}</p>
+                    <p><strong>Status do Pedido:</strong> {{ pedido['statusPedido'] }}</p>
+                    <p><strong>Status do Pagamento:</strong> {{ pedido['statusPagamento'] }}</p>
+                    <p><strong>Método de Pagamento:</strong> {{ pedido['tipoPagamento'] }}</p>
+                    <p><strong>Taxa de Entrega:</strong> R$ {{ pedido['taxaEntrega'] }}</p>
+                    <p><strong>Status da Entrega:</strong> {{ pedido['statusEntrega'] if pedido['statusEntrega'] is not none else '---' }}</p>
+                    
+                    {% for produto in produtos %}
+                        {% if produto['idPedido'] == pedido['id'] %}
+                            <p><strong>Restaurante:</strong> {{ produto['nome'] }}</p>
+
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="pedido-action">
+                    <a href="{{url_for('AlterarStatusEntrega', idPedido = pedido['id'])}}"><button>Alterar Status</button></a>
+                </div>
+            </div>
+        {% endfor %}
+</body>
+</html>
